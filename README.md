@@ -11,8 +11,6 @@ First thing to use CloudAR sdk is to configure the following framework
 
 - CloudAR.framework
 - StreamSdk.framework
-- Starscream.framework
-- Alamofire.framework
 
 ### Import  CloudAR
 
@@ -26,21 +24,40 @@ import CloudAR
 
 #### AR
 
-After importing framework, you can use BIMModelController class  as subController to show ar view and to position; in this version, only scan position func is enabled
+After importing framework, you can use ARModelController class  as subController to show ar view and to position. In this version, only scan position func is enabled
 
-##### Position
+##### EnterPosition
 
-Calling following func  *enterPosition*(). you can scan specific qrcode, downloading from vanjian's ourbim website, to locate current position in engine
+Calling following function  *enterPosition*(). you can scan specific qrcode, downloading from vanjian's ourbim website, to locate current position in engine
 
 ```swift
-BIMModelController.enterPosition(type: VJARPositionType)
+ARModelController.enterPosition(positionType: VJARPositionType)
 ```
 
-This function is used to start position,and you should hidden BIMModelController's view before that
+When clicking comfirm position button, ARModelController will to show view automatically, then you can inherit VJARPositionProtocol to listen position finish event.
 
-```
-BIMModelController.view.isHidden = true
-```
+##### Protocol
 
-After comfirm position, BIMModelController will to show view automatically. then you could interact with model in engine.
+- ARPositionProtocol
+
+  this protocol has two func <u>handleConfirmPosition()</u>  and  handleConfirmPosition() whick is used for listen confirm and cancle event when position
+
+  ```swift
+  func handleConfirmPosition(type: CloudAR.car_ARPositionType) {}
+  func handleCanclePosition() {}
+  ```
+
+- CloudXRConnectProtocol
+
+  this protocol is used to listen connection state with cloudxr. Only establish connection with cloudxr, u can request ar model load
+
+  ```
+  func notifyConnect(connected: Bool) {}
+  ```
+
+  
+
+#### Agreement
+
+Some datastruct info
 
