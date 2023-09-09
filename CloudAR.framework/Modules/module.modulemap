@@ -1,0 +1,11 @@
+framework module CloudAR {
+  umbrella header "CloudAR.h"
+
+  export *
+  module * { export * }
+}
+
+module CloudAR.Swift {
+  header "CloudAR-Swift.h"
+  requires objc
+}
