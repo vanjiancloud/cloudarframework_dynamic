@@ -66,7 +66,7 @@
 		</data>
 		<key>Alamofire-master/.swiftpm/xcode/xcuserdata/lee.xcuserdatad/xcschemes/xcschememanagement.plist</key>
 		<data>
-		pwLN5aVO/cImHatvzg+pY5/kkiQ=
+		xIUawuQVQkg7SjWwNS0i55xZd+U=
 		</data>
 		<key>Alamofire-master/Alamofire.podspec</key>
 		<data>
@@ -2233,7 +2233,7 @@
 		</data>
 		<key>Modules/CloudAR.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		HEpa2nBzV9gYEvqpolgwiXO1aQo=
+		oevoJ2qnBvuUw7pe+LmO6vJLnRw=
 		</data>
 		<key>Modules/CloudAR.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -2245,7 +2245,7 @@
 		</data>
 		<key>Modules/CloudAR.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		RF6S6jnjRpPeseoVxZGxJpnW+Qg=
+		8DB99YOUkM02PgsFX2veKTpZBbQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -2841,7 +2841,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TeThEg5sn56QHUxZvm2aVpc/KyBoEVCx0rv4q1TuRnY=
+			miOut1I5LoTWc3GqPtUPJcC9UlXBHxeExj8nRZOiDAg=
 			</data>
 		</dict>
 		<key>Alamofire-master/Alamofire.podspec</key>
@@ -6592,7 +6592,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WjVl5HTMFIs7bE1h/trzI9bkw7hoqApLVYuclrwwzeA=
+			rj6oRxO7zt28S6dbLFtXqhPavbZx7W6e+vgsmDP5LGA=
 			</data>
 		</dict>
 		<key>Modules/CloudAR.swiftmodule/arm64-apple-ios.abi.json</key>
@@ -6613,7 +6613,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FralqA2xURCdX652tlrBsZJX/GeaXXUrw/Yst8Ywrkk=
+			/GJGxc/AiV8VDKqt/h96KPXIeMwLWfYyokLIiPPKmIc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
