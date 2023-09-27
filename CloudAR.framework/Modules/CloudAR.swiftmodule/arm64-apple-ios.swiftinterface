@@ -1,0 +1,213 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios15.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name CloudAR
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import ARKit
+import AVFoundation
+import Alamofire
+@_exported import CloudAR
+import Foundation
+import Metal
+import MetalKit
+import RealityKit
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ARPositionViewController : UIKit.UIViewController, AVFoundation.AVCaptureMetadataOutputObjectsDelegate {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) public func handlePosition(positionType: CloudAR.car_ARPositionType)
+  @_Concurrency.MainActor(unsafe) public func startQRCodeCapture()
+  @_Concurrency.MainActor(unsafe) public func stopQRCodeCapture()
+  @_Concurrency.MainActor(unsafe) public func qrCodeCaptureFinish()
+  @_Concurrency.MainActor(unsafe) @objc public func metadataOutput(_ output: AVFoundation.AVCaptureMetadataOutput, didOutput metadataObjects: [AVFoundation.AVMetadataObject], from connection: AVFoundation.AVCaptureConnection)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+public protocol ARPositionProtocol {
+  func handleConfirmPosition(type: CloudAR.car_ARPositionType)
+  func handleCanclePosition()
+}
+public enum car_ScreenMode : Swift.UInt8 {
+  case None
+  case ThreeD
+  case AR
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum car_ARPositionType {
+  case None
+  case ScanPosition
+  case SpacePosition
+  public static func == (a: CloudAR.car_ARPositionType, b: CloudAR.car_ARPositionType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct car_LocatorCodeInfo {
+}
+@_hasMissingDesignatedInitializers open class car_EngineStatus {
+  public static var screenMode: CloudAR.car_ScreenMode
+  public static var arPositionType: CloudAR.car_ARPositionType
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ARPositionView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) public func enterScanPositionView()
+  @_Concurrency.MainActor(unsafe) public func enterScanPositionAdjustView()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ARModelController : UIKit.UIViewController, MetalKit.MTKViewDelegate, ARKit.ARSessionDelegate {
+  @_Concurrency.MainActor(unsafe) public var address: Swift.String
+  @_Concurrency.MainActor(unsafe) public var notityConnectProtocol: (any CloudAR.CloudXRConnectProtocol)!
+  @_Concurrency.MainActor(unsafe) public var arPositionProtocol: (any CloudAR.ARPositionProtocol)!
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc public func draw(in view: MetalKit.MTKView)
+  @_Concurrency.MainActor(unsafe) @objc public func mtkView(_ view: MetalKit.MTKView, drawableSizeWillChange size: CoreFoundation.CGSize)
+  @_Concurrency.MainActor(unsafe) @objc public func session(_ session: ARKit.ARSession, didUpdate frame: ARKit.ARFrame)
+  @_Concurrency.MainActor(unsafe) @objc public func session(_ session: ARKit.ARSession, didAdd anchors: [ARKit.ARAnchor])
+  @_Concurrency.MainActor(unsafe) public func enterPosition(positionType: CloudAR.car_ARPositionType)
+  @_Concurrency.MainActor(unsafe) public func getConnectQuality() -> (Swift.Bool, CloudAR.car_StreamQuality?, CloudAR.car_StreamQualityReason?)
+  @_Concurrency.MainActor(unsafe) public func getCurrentARFrame() -> ARKit.ARFrame?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@_hasMissingDesignatedInitializers open class car_UserInfo {
+  public static var userID: Swift.String
+  public static var taskID: Swift.String
+  public static var currProID: Swift.String
+  public static var senderID: Swift.String
+  public static var cloudarIP: Swift.String {
+    get
+    set
+  }
+  public static var hostID: Swift.String {
+    get
+    set
+  }
+  @objc deinit
+}
+public func car_queryLocatorCodeInfo(codeID: Swift.String, completion: @escaping (Swift.Result<Foundation.Data, any Swift.Error>) -> Swift.Void)
+public enum car_StreamQuality : Swift.UInt8 {
+  case unstable
+  case bad
+  case poor
+  case fair
+  case good
+  case excellent
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum car_StreamQualityReason : Swift.UInt8 {
+  case estimatingQuality
+  case lowBandwidth
+  case highLatency
+  case highPacketLoss
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers open class car_URL {
+  public static var urlPre: Swift.String {
+    get
+    set
+  }
+  public static var xrUrlPre: Swift.String {
+    get
+    set
+  }
+  @objc deinit
+}
+public func car_validByReg(Source: Swift.String, Regex: Swift.String) -> Swift.Bool
+public func car_isEmail(_ email: Swift.String) -> Swift.Bool
+public func car_isPhone(_ phone: Swift.String) -> Swift.Bool
+public func car_verifyLocatorCode(code: Swift.String) -> Swift.Bool
+public func car_convertCIImageToCGImage(ciImage: CoreImage.CIImage) -> CoreGraphics.CGImage
+public func car_convertUIImageToCGImage(uiImage: UIKit.UIImage) -> CoreGraphics.CGImage!
+public func car_dataToPixelBuffer(data: Foundation.Data, width: Swift.Int, height: Swift.Int) -> CoreVideo.CVPixelBuffer?
+public func car_makeCString(_ str: Swift.String) -> Swift.UnsafeMutablePointer<Swift.UInt8>
+public func car_jsonString(from dictionary: inout [Swift.String : Any]) -> Swift.String?
+public func car_dataToJson(from data: Foundation.Data) -> [Swift.String : Any]?
+public func car_matchByReg(source: Swift.String, pattern: Swift.String) -> [Swift.String]
+public func car_extractInfoFromPropertyData(_ propertyData: Swift.String) -> [[Swift.String : Any]?]
+public protocol CloudXRConnectProtocol {
+  func notifyConnect(connected: Swift.Bool)
+}
+public enum car_PositionActionType : Swift.UInt8 {
+  case HiddenModel
+  case ClockwiseRotation
+  case DirectionOffset
+  case QRCodeTransform
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum car_InputState : Swift.UInt8 {
+  case began
+  case changed
+  case ended
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum car_InputType : Swift.UInt8 {
+  case Click
+  case DoubleClick
+  case Pan
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum car_FError : Swift.Error {
+  case customError(message: Swift.String)
+}
+public func car_sendEventToEngine(info: inout [Swift.String : Any], completion: @escaping (Swift.Result<[Swift.String : Any], any Swift.Error>) -> Swift.Void)
+public func car_sendTransformInfoWhenCapture(cameraTransform: simd.simd_float4x4, imageTransform: simd.simd_float4x4, transform: Swift.String, completion: @escaping (Swift.Result<[Swift.String : Any], any Swift.Error>) -> Swift.Void)
+public func car_sendClockwiseRotation(isClockwise: Swift.Bool, completion: @escaping (Swift.Result<[Swift.String : Any], any Swift.Error>) -> Swift.Void)
+public func car_sendDirectionOffset(direction: Swift.String, offset: CoreFoundation.CGFloat = 2.0, completion: @escaping (Swift.Result<[Swift.String : Any], any Swift.Error>) -> Swift.Void)
+public func car_sendHiddenModel(hidden: Swift.Bool, completion: @escaping (Swift.Result<[Swift.String : Any], any Swift.Error>) -> Swift.Void)
+public func car_sendClickGesture(point: CoreFoundation.CGPoint, size: CoreFoundation.CGSize, completion: @escaping (Swift.Result<[Swift.String : Any], any Swift.Error>) -> Swift.Void)
+public func car_sendPanGesture(point: CoreFoundation.CGPoint, size: CoreFoundation.CGSize, state: CloudAR.car_InputState, completion: @escaping (Swift.Result<[Swift.String : Any], any Swift.Error>) -> Swift.Void)
+public func car_sendJobExecute(key: Swift.String, completion: @escaping (Swift.Result<[Swift.String : Any], any Swift.Error>) -> Swift.Void)
+public func car_sendPlaceEvent(confirmPlace: Swift.Bool, completion: @escaping (Swift.Result<[Swift.String : Any], any Swift.Error>) -> Swift.Void)
+public func car_createARTrackingImg(image: CoreVideo.CVPixelBuffer) -> ARKit.ARReferenceImage
+public func car_createARTrackingImg(image: CoreGraphics.CGImage) -> ARKit.ARReferenceImage
+public func car_createARTrackingImg(image: UIKit.UIImage) -> ARKit.ARReferenceImage?
+extension CloudAR.car_ScreenMode : Swift.Equatable {}
+extension CloudAR.car_ScreenMode : Swift.Hashable {}
+extension CloudAR.car_ScreenMode : Swift.RawRepresentable {}
+extension CloudAR.car_ARPositionType : Swift.Equatable {}
+extension CloudAR.car_ARPositionType : Swift.Hashable {}
+extension CloudAR.car_StreamQuality : Swift.Equatable {}
+extension CloudAR.car_StreamQuality : Swift.Hashable {}
+extension CloudAR.car_StreamQuality : Swift.RawRepresentable {}
+extension CloudAR.car_StreamQualityReason : Swift.Equatable {}
+extension CloudAR.car_StreamQualityReason : Swift.Hashable {}
+extension CloudAR.car_StreamQualityReason : Swift.RawRepresentable {}
+extension CloudAR.car_PositionActionType : Swift.Equatable {}
+extension CloudAR.car_PositionActionType : Swift.Hashable {}
+extension CloudAR.car_PositionActionType : Swift.RawRepresentable {}
+extension CloudAR.car_InputState : Swift.Equatable {}
+extension CloudAR.car_InputState : Swift.Hashable {}
+extension CloudAR.car_InputState : Swift.RawRepresentable {}
+extension CloudAR.car_InputType : Swift.Equatable {}
+extension CloudAR.car_InputType : Swift.Hashable {}
+extension CloudAR.car_InputType : Swift.RawRepresentable {}
