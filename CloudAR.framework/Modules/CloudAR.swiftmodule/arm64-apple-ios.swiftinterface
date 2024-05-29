@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
 // swift-module-flags: -target arm64-apple-ios15.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name CloudAR
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import ARKit
@@ -9,11 +9,13 @@ import Alamofire
 import Foundation
 import Metal
 import MetalKit
+import Network
 import RealityKit
 import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ARPositionViewController : UIKit.UIViewController, AVFoundation.AVCaptureMetadataOutputObjectsDelegate {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
@@ -73,13 +75,16 @@ public struct car_LocatorCodeInfo {
   @_Concurrency.MainActor(unsafe) public var arPositionProtocol: (any CloudAR.ARPositionProtocol)!
   @_Concurrency.MainActor(unsafe) public var notifyClientStateUpdateProtocol: (any CloudAR.CloudXRClientStateUpdateProtocol)!
   @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func closeARModel()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc public func draw(in view: MetalKit.MTKView)
   @_Concurrency.MainActor(unsafe) @objc public func mtkView(_ view: MetalKit.MTKView, drawableSizeWillChange size: CoreFoundation.CGSize)
   @_Concurrency.MainActor(unsafe) @objc public func session(_ session: ARKit.ARSession, didUpdate frame: ARKit.ARFrame)
+  @_Concurrency.MainActor(unsafe) public func lightProperties()
   @_Concurrency.MainActor(unsafe) @objc public func session(_ session: ARKit.ARSession, didAdd anchors: [ARKit.ARAnchor])
   @_Concurrency.MainActor(unsafe) public func enterPosition(positionType: CloudAR.car_ARPositionType)
-  @_Concurrency.MainActor(unsafe) public func getConnectQuality() -> (Swift.Bool, CloudAR.car_StreamQuality?, CloudAR.car_StreamQualityReason?)
+  @_Concurrency.MainActor(unsafe) public func getConnectQuality() -> (Swift.Bool, CloudAR.car_StreamQuality?, CloudAR.car_StreamQualityReason?, Swift.Int)
   @_Concurrency.MainActor(unsafe) public func getCurrentARFrame() -> ARKit.ARFrame?
   @_Concurrency.MainActor(unsafe) public func reconnect() -> (Swift.Bool, Swift.String)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
@@ -88,6 +93,7 @@ public struct car_LocatorCodeInfo {
 @_hasMissingDesignatedInitializers open class car_UserInfo {
   public static var userID: Swift.String
   public static var taskID: Swift.String
+  public static var publicIp: Swift.String
   public static var currProID: Swift.String
   public static var senderID: Swift.String
   public static var cloudarIP: Swift.String {
@@ -185,6 +191,9 @@ public protocol CloudXRConnectProtocol {
 }
 public protocol CloudXRClientStateUpdateProtocol {
   func notifyClientStateUpdate(state: CloudAR.car_ClientState, reason: CloudAR.car_ClientStateReason)
+  func notifyConnectQualityState(quality: CloudAR.car_StreamQuality, reason: CloudAR.car_StreamQualityReason)
+  func notifyConnectQualityState()
+  func notifyLatchFrameError()
 }
 public enum car_PositionActionType : Swift.UInt8 {
   case HiddenModel

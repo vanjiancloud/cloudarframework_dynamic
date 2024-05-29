@@ -1357,6 +1357,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           }
         ]
       },
@@ -5498,6 +5505,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "__DefaultCustomPlaygroundQuickLookable",
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
@@ -5963,6 +5977,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "__DefaultCustomPlaygroundQuickLookable",
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
@@ -6005,6 +6026,13 @@
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CloudAR"
+      },
+      {
+        "kind": "Import",
+        "name": "Network",
+        "printedName": "Network",
         "declKind": "Import",
         "moduleName": "CloudAR"
       },
@@ -13267,6 +13295,97 @@
           },
           {
             "kind": "Var",
+            "name": "backgroundTaskIdentifier",
+            "printedName": "backgroundTaskIdentifier",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIBackgroundTaskIdentifier",
+                "printedName": "UIKit.UIBackgroundTaskIdentifier",
+                "usr": "c:@T@UIBackgroundTaskIdentifier"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7CloudAR17ARModelControllerC24backgroundTaskIdentifierSo012UIBackgroundfG0avp",
+            "mangledName": "$s7CloudAR17ARModelControllerC24backgroundTaskIdentifierSo012UIBackgroundfG0avp",
+            "moduleName": "CloudAR",
+            "isOpen": true,
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "HasStorage",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIBackgroundTaskIdentifier",
+                    "printedName": "UIKit.UIBackgroundTaskIdentifier",
+                    "usr": "c:@T@UIBackgroundTaskIdentifier"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7CloudAR17ARModelControllerC24backgroundTaskIdentifierSo012UIBackgroundfG0avg",
+                "mangledName": "$s7CloudAR17ARModelControllerC24backgroundTaskIdentifierSo012UIBackgroundfG0avg",
+                "moduleName": "CloudAR",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIBackgroundTaskIdentifier",
+                    "printedName": "UIKit.UIBackgroundTaskIdentifier",
+                    "usr": "c:@T@UIBackgroundTaskIdentifier"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7CloudAR17ARModelControllerC24backgroundTaskIdentifierSo012UIBackgroundfG0avs",
+                "mangledName": "$s7CloudAR17ARModelControllerC24backgroundTaskIdentifierSo012UIBackgroundfG0avs",
+                "moduleName": "CloudAR",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7CloudAR17ARModelControllerC24backgroundTaskIdentifierSo012UIBackgroundfG0avM",
+                "mangledName": "$s7CloudAR17ARModelControllerC24backgroundTaskIdentifierSo012UIBackgroundfG0avM",
+                "moduleName": "CloudAR",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "notityConnectProtocol",
             "printedName": "notityConnectProtocol",
             "children": [
@@ -13615,6 +13734,61 @@
           },
           {
             "kind": "Function",
+            "name": "viewDidDisappear",
+            "printedName": "viewDidDisappear(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@CloudAR@objc(cs)ARModelController(im)viewDidDisappear:",
+            "mangledName": "$s7CloudAR17ARModelControllerC16viewDidDisappearyySbF",
+            "moduleName": "CloudAR",
+            "overriding": true,
+            "isOpen": true,
+            "objc_name": "viewDidDisappear:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "closeARModel",
+            "printedName": "closeARModel()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7CloudAR17ARModelControllerC05closeC0yyF",
+            "mangledName": "$s7CloudAR17ARModelControllerC05closeC0yyF",
+            "moduleName": "CloudAR",
+            "isOpen": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "viewDidLoad",
             "printedName": "viewDidLoad()",
             "children": [
@@ -13926,6 +14100,28 @@
           },
           {
             "kind": "Function",
+            "name": "lightProperties",
+            "printedName": "lightProperties()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7CloudAR17ARModelControllerC15lightPropertiesyyF",
+            "mangledName": "$s7CloudAR17ARModelControllerC15lightPropertiesyyF",
+            "moduleName": "CloudAR",
+            "isOpen": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "session",
             "printedName": "session(_:didAdd:)",
             "children": [
@@ -14056,13 +14252,35 @@
           },
           {
             "kind": "Function",
+            "name": "startTimer",
+            "printedName": "startTimer()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@CloudAR@objc(cs)ARModelController(im)startTimer",
+            "mangledName": "$s7CloudAR17ARModelControllerC10startTimeryyF",
+            "moduleName": "CloudAR",
+            "isOpen": true,
+            "declAttributes": [
+              "Custom",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getConnectQuality",
             "printedName": "getConnectQuality()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Tuple",
-                "printedName": "(Swift.Bool, CloudAR.car_StreamQuality?, CloudAR.car_StreamQualityReason?)",
+                "printedName": "(Swift.Bool, CloudAR.car_StreamQuality?, CloudAR.car_StreamQualityReason?, Swift.Int)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -14097,13 +14315,19 @@
                       }
                     ],
                     "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
                   }
                 ]
               }
             ],
             "declKind": "Func",
-            "usr": "s:7CloudAR17ARModelControllerC17getConnectQualitySb_AA010car_StreamG0OSgAA0h1_iG6ReasonOSgtyF",
-            "mangledName": "$s7CloudAR17ARModelControllerC17getConnectQualitySb_AA010car_StreamG0OSgAA0h1_iG6ReasonOSgtyF",
+            "usr": "s:7CloudAR17ARModelControllerC17getConnectQualitySb_AA010car_StreamG0OSgAA0h1_iG6ReasonOSgSityF",
+            "mangledName": "$s7CloudAR17ARModelControllerC17getConnectQualitySb_AA010car_StreamG0OSgAA0h1_iG6ReasonOSgSityF",
             "moduleName": "CloudAR",
             "isOpen": true,
             "declAttributes": [
@@ -14343,6 +14567,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -15132,6 +15363,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -16094,6 +16332,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -18082,6 +18327,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "__DefaultCustomPlaygroundQuickLookable",
             "printedName": "__DefaultCustomPlaygroundQuickLookable",
             "usr": "s:s38__DefaultCustomPlaygroundQuickLookableP",
@@ -18728,6 +18980,107 @@
                 "declKind": "Accessor",
                 "usr": "s:7CloudAR12car_UserInfoC6taskIDSSvMZ",
                 "mangledName": "$s7CloudAR12car_UserInfoC6taskIDSSvMZ",
+                "moduleName": "CloudAR",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "publicIp",
+            "printedName": "publicIp",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7CloudAR12car_UserInfoC8publicIpSSvpZ",
+            "mangledName": "$s7CloudAR12car_UserInfoC8publicIpSSvpZ",
+            "moduleName": "CloudAR",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7CloudAR12car_UserInfoC8publicIpSSvgZ",
+                "mangledName": "$s7CloudAR12car_UserInfoC8publicIpSSvgZ",
+                "moduleName": "CloudAR",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7CloudAR12car_UserInfoC8publicIpSSvsZ",
+                "mangledName": "$s7CloudAR12car_UserInfoC8publicIpSSvsZ",
+                "moduleName": "CloudAR",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7CloudAR12car_UserInfoC8publicIpSSvMZ",
+                "mangledName": "$s7CloudAR12car_UserInfoC8publicIpSSvMZ",
                 "moduleName": "CloudAR",
                 "static": true,
                 "implicit": true,
@@ -22192,6 +22545,90 @@
             "genericSig": "<τ_0_0 where τ_0_0 : CloudAR.CloudXRClientStateUpdateProtocol>",
             "sugared_genericSig": "<Self where Self : CloudAR.CloudXRClientStateUpdateProtocol>",
             "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "notifyConnectQualityState",
+            "printedName": "notifyConnectQualityState(quality:reason:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "car_StreamQuality",
+                "printedName": "CloudAR.car_StreamQuality",
+                "usr": "s:7CloudAR17car_StreamQualityO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "car_StreamQualityReason",
+                "printedName": "CloudAR.car_StreamQualityReason",
+                "usr": "s:7CloudAR23car_StreamQualityReasonO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7CloudAR0A27XRClientStateUpdateProtocolP020notifyConnectQualityD07quality6reasonyAA010car_StreamI0O_AA0l1_mI6ReasonOtF",
+            "mangledName": "$s7CloudAR0A27XRClientStateUpdateProtocolP020notifyConnectQualityD07quality6reasonyAA010car_StreamI0O_AA0l1_mI6ReasonOtF",
+            "moduleName": "CloudAR",
+            "genericSig": "<τ_0_0 where τ_0_0 : CloudAR.CloudXRClientStateUpdateProtocol>",
+            "sugared_genericSig": "<Self where Self : CloudAR.CloudXRClientStateUpdateProtocol>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "notifyConnectQualityState",
+            "printedName": "notifyConnectQualityState()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7CloudAR0A27XRClientStateUpdateProtocolP020notifyConnectQualityD0yyF",
+            "mangledName": "$s7CloudAR0A27XRClientStateUpdateProtocolP020notifyConnectQualityD0yyF",
+            "moduleName": "CloudAR",
+            "genericSig": "<τ_0_0 where τ_0_0 : CloudAR.CloudXRClientStateUpdateProtocol>",
+            "sugared_genericSig": "<Self where Self : CloudAR.CloudXRClientStateUpdateProtocol>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "notifyLatchFrameError",
+            "printedName": "notifyLatchFrameError()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7CloudAR0A27XRClientStateUpdateProtocolP21notifyLatchFrameErroryyF",
+            "mangledName": "$s7CloudAR0A27XRClientStateUpdateProtocolP21notifyLatchFrameErroryyF",
+            "moduleName": "CloudAR",
+            "genericSig": "<τ_0_0 where τ_0_0 : CloudAR.CloudXRClientStateUpdateProtocol>",
+            "sugared_genericSig": "<Self where Self : CloudAR.CloudXRClientStateUpdateProtocol>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           }
@@ -24114,36 +24551,31 @@
         "usr": "s:10Foundation4DateV",
         "mangledName": "$s10Foundation4DateV",
         "moduleName": "Foundation",
+        "intro_Macosx": "10.10",
+        "intro_iOS": "8.0",
+        "intro_tvOS": "9.0",
+        "intro_watchOS": "2.0",
+        "declAttributes": [
+          "Available",
+          "Available",
+          "Available",
+          "Available"
+        ],
         "isExternal": true,
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "ReferenceConvertible",
-            "printedName": "ReferenceConvertible",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "ReferenceType",
-                "printedName": "ReferenceType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSDate",
-                    "printedName": "Foundation.NSDate",
-                    "usr": "c:objc(cs)NSDate"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:10Foundation20ReferenceConvertibleP",
-            "mangledName": "$s10Foundation20ReferenceConvertibleP"
-          },
           {
             "kind": "Conformance",
             "name": "Comparable",
             "printedName": "Comparable",
             "usr": "s:SL",
             "mangledName": "$sSL"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
           },
           {
             "kind": "Conformance",
@@ -24158,35 +24590,6 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Strideable",
-            "printedName": "Strideable",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "Stride",
-                "printedName": "Stride",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:Sx",
-            "mangledName": "$sSx"
           },
           {
             "kind": "Conformance",
@@ -24208,6 +24611,42 @@
             "printedName": "CustomReflectable",
             "usr": "s:s17CustomReflectableP",
             "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ReferenceConvertible",
+            "printedName": "ReferenceConvertible",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ReferenceType",
+                "printedName": "ReferenceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSDate",
+                    "printedName": "Foundation.NSDate",
+                    "usr": "c:objc(cs)NSDate"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation20ReferenceConvertibleP",
+            "mangledName": "$s10Foundation20ReferenceConvertibleP"
           },
           {
             "kind": "Conformance",
@@ -24240,17 +24679,25 @@
           },
           {
             "kind": "Conformance",
-            "name": "Decodable",
-            "printedName": "Decodable",
-            "usr": "s:Se",
-            "mangledName": "$sSe"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Encodable",
-            "printedName": "Encodable",
-            "usr": "s:SE",
-            "mangledName": "$sSE"
+            "name": "Strideable",
+            "printedName": "Strideable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Stride",
+                "printedName": "Stride",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sx",
+            "mangledName": "$sSx"
           }
         ]
       },
@@ -24442,1416 +24889,1437 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ARPositionViewController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ARPositionViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 633,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
       "kind": "IntegerLiteral",
       "offset": 266,
       "length": 6,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
       "kind": "IntegerLiteral",
       "offset": 282,
       "length": 2,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
       "kind": "IntegerLiteral",
       "offset": 266,
       "length": 6,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
       "kind": "IntegerLiteral",
       "offset": 282,
       "length": 2,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
       "kind": "IntegerLiteral",
       "offset": 266,
       "length": 6,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
       "kind": "IntegerLiteral",
       "offset": 282,
       "length": 2,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/EngineData.swift",
       "kind": "FloatLiteral",
       "offset": 1073,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 227,
       "length": 2,
       "value": "32"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 310,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 3124,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 3149,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 3174,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 3199,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 3124,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 3149,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 3174,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 3199,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 3124,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 3149,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 3174,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/CXRFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 3199,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ARPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ARPositionView.swift",
       "kind": "StringLiteral",
       "offset": 168,
       "length": 11,
       "value": "\"CloudAR.BackBtnView\""
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "BooleanLiteral",
-      "offset": 473,
+      "offset": 488,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "IntegerLiteral",
-      "offset": 560,
+      "offset": 575,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "FloatLiteral",
-      "offset": 701,
+      "offset": 716,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "IntegerLiteral",
-      "offset": 957,
+      "offset": 972,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "Array",
-      "offset": 1408,
+      "offset": 1423,
       "length": 172,
       "value": "[1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0]"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2015,
+      "offset": 2030,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2318,
+      "offset": 2333,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "FloatLiteral",
-      "offset": 2387,
+      "offset": 2402,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "FloatLiteral",
-      "offset": 2394,
+      "offset": 2409,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "Array",
-      "offset": 3153,
+      "offset": 3168,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3189,
+      "offset": 3204,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "FloatLiteral",
-      "offset": 3403,
+      "offset": 3418,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3439,
+      "offset": 3454,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "FloatLiteral",
-      "offset": 3488,
+      "offset": 3503,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "FloatLiteral",
-      "offset": 3608,
+      "offset": 3623,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "FloatLiteral",
-      "offset": 3731,
+      "offset": 3746,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "IntegerLiteral",
-      "offset": 4652,
+      "offset": 4667,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "IntegerLiteral",
-      "offset": 4694,
+      "offset": 4709,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "FloatLiteral",
-      "offset": 5150,
+      "offset": 5165,
       "length": 3,
       "value": "0.0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5260,
+      "offset": 5275,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5345,
+      "offset": 5360,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5673,
+      "offset": 5681,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5703,
+      "offset": 5711,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5759,
+      "offset": 5767,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5823,
+      "offset": 5831,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "BooleanLiteral",
-      "offset": 37149,
+      "offset": 6393,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6486,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "BooleanLiteral",
-      "offset": 37931,
+      "offset": 39165,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 39935,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "IntegerLiteral",
       "offset": 330,
       "length": 2,
       "value": "80"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "IntegerLiteral",
       "offset": 359,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "IntegerLiteral",
       "offset": 394,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "IntegerLiteral",
       "offset": 426,
       "length": 2,
       "value": "80"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "StringLiteral",
       "offset": 170,
       "length": 15,
       "value": "\"CloudAR.VJClockwiseView\""
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "IntegerLiteral",
       "offset": 1876,
       "length": 3,
       "value": "150"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "IntegerLiteral",
       "offset": 1906,
       "length": 3,
       "value": "150"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "IntegerLiteral",
       "offset": 1943,
       "length": 2,
       "value": "50"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "IntegerLiteral",
       "offset": 1975,
       "length": 2,
       "value": "50"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "StringLiteral",
       "offset": 1819,
       "length": 21,
       "value": "\"CloudAR.VJDirectionOffsetView\""
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "IntegerLiteral",
       "offset": 5096,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "IntegerLiteral",
       "offset": 5135,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "IntegerLiteral",
       "offset": 5174,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "IntegerLiteral",
       "offset": 5214,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Position\/ScanPositionView.swift",
       "kind": "IntegerLiteral",
       "offset": 5253,
       "length": 2,
       "value": "35"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
       "kind": "StringLiteral",
       "offset": 242,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
       "kind": "StringLiteral",
       "offset": 289,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
       "kind": "StringLiteral",
       "offset": 325,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
       "kind": "StringLiteral",
       "offset": 383,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
       "kind": "StringLiteral",
       "offset": 487,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
       "kind": "StringLiteral",
-      "offset": 562,
+      "offset": 608,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
       "kind": "StringLiteral",
-      "offset": 632,
+      "offset": 656,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/UserInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 726,
       "length": 8,
       "value": "\"123456\""
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/AssertFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/AssertFunctions.swift",
       "kind": "StringLiteral",
       "offset": 153,
       "length": 21,
       "value": "\"com.vanjian.CloudAR\""
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 168,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 196,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 224,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 252,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 280,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 308,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 168,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 196,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 224,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 252,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 280,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 308,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 168,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 196,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 224,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 252,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 280,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 308,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 389,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 421,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 453,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 485,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 389,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 421,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 453,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 485,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 389,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 421,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 453,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 485,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 602,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 704,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 793,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 891,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 989,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1074,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 602,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 704,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 793,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 891,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 989,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1074,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 602,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 704,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 793,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 891,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 989,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1074,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1214,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1294,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1323,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1352,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1383,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1412,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1438,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1471,
       "length": 1,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1509,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1579,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1725,
       "length": 3,
       "value": "101"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1214,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1294,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1323,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1352,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1383,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1412,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1438,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1471,
       "length": 1,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1509,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1579,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1725,
       "length": 3,
       "value": "101"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1214,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1294,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1323,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1352,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1383,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1412,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1438,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1471,
       "length": 1,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1509,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1579,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1725,
       "length": 3,
       "value": "101"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1941,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 2023,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 2075,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 2166,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 2263,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1941,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 2023,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 2075,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 2166,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 2263,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 1941,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 2023,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 2075,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 2166,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
       "offset": 2263,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/URL.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/URL.swift",
       "kind": "StringLiteral",
       "offset": 202,
       "length": 37,
       "value": "\"https:\/\/api.ourbim.com:11023\/vjapi\/\""
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/URL.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/URL.swift",
       "kind": "StringLiteral",
       "offset": 280,
       "length": 35,
       "value": "\"https:\/\/api.ourbim.com:14041\/api\/\""
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1104,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1136,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1168,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1200,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1104,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1136,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1168,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1200,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1104,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1136,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1168,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1200,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1291,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1315,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1339,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1291,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1315,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1339,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1291,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1315,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1339,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1406,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1440,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1451,
       "length": 3,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1406,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1440,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1451,
       "length": 3,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1406,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1440,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "IntegerLiteral",
       "offset": 1451,
       "length": 3,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/lee\/Documents\/SDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Funcs\/InputEventFunctions.swift",
       "kind": "FloatLiteral",
-      "offset": 7845,
+      "offset": 7878,
       "length": 3,
       "value": "2.0"
     }
