@@ -14252,35 +14252,13 @@
           },
           {
             "kind": "Function",
-            "name": "startTimer",
-            "printedName": "startTimer()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@CloudAR@objc(cs)ARModelController(im)startTimer",
-            "mangledName": "$s7CloudAR17ARModelControllerC10startTimeryyF",
-            "moduleName": "CloudAR",
-            "isOpen": true,
-            "declAttributes": [
-              "Custom",
-              "ObjC"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "getConnectQuality",
             "printedName": "getConnectQuality()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Tuple",
-                "printedName": "(Swift.Bool, CloudAR.car_StreamQuality?, CloudAR.car_StreamQualityReason?, Swift.Int)",
+                "printedName": "(Swift.Bool, CloudAR.car_StreamQuality?, CloudAR.car_StreamQualityReason?)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -14315,19 +14293,13 @@
                       }
                     ],
                     "usr": "s:Sq"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
                   }
                 ]
               }
             ],
             "declKind": "Func",
-            "usr": "s:7CloudAR17ARModelControllerC17getConnectQualitySb_AA010car_StreamG0OSgAA0h1_iG6ReasonOSgSityF",
-            "mangledName": "$s7CloudAR17ARModelControllerC17getConnectQualitySb_AA010car_StreamG0OSgAA0h1_iG6ReasonOSgSityF",
+            "usr": "s:7CloudAR17ARModelControllerC17getConnectQualitySb_AA010car_StreamG0OSgAA0h1_iG6ReasonOSgtyF",
+            "mangledName": "$s7CloudAR17ARModelControllerC17getConnectQualitySb_AA010car_StreamG0OSgAA0h1_iG6ReasonOSgtyF",
             "moduleName": "CloudAR",
             "isOpen": true,
             "declAttributes": [
@@ -21576,6 +21548,47 @@
             "fixedbinaryorder": 4
           },
           {
+            "kind": "Var",
+            "name": "connecting",
+            "printedName": "connecting",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CloudAR.car_CustomConnectState.Type) -> CloudAR.car_CustomConnectState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "car_CustomConnectState",
+                    "printedName": "CloudAR.car_CustomConnectState",
+                    "usr": "s:7CloudAR22car_CustomConnectStateO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CloudAR.car_CustomConnectState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "car_CustomConnectState",
+                        "printedName": "CloudAR.car_CustomConnectState",
+                        "usr": "s:7CloudAR22car_CustomConnectStateO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7CloudAR22car_CustomConnectStateO10connectingyA2CmF",
+            "mangledName": "$s7CloudAR22car_CustomConnectStateO10connectingyA2CmF",
+            "moduleName": "CloudAR",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 5
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(rawValue:)",
@@ -21694,6 +21707,472 @@
             "usr": "s:SY",
             "mangledName": "$sSY"
           },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "car_ServerWithClientDisConnectType",
+        "printedName": "car_ServerWithClientDisConnectType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "serverDisConnect",
+            "printedName": "serverDisConnect",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CloudAR.car_ServerWithClientDisConnectType.Type) -> CloudAR.car_ServerWithClientDisConnectType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "car_ServerWithClientDisConnectType",
+                    "printedName": "CloudAR.car_ServerWithClientDisConnectType",
+                    "usr": "s:7CloudAR34car_ServerWithClientDisConnectTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CloudAR.car_ServerWithClientDisConnectType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "car_ServerWithClientDisConnectType",
+                        "printedName": "CloudAR.car_ServerWithClientDisConnectType",
+                        "usr": "s:7CloudAR34car_ServerWithClientDisConnectTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7CloudAR34car_ServerWithClientDisConnectTypeO06servergH0yA2CmF",
+            "mangledName": "$s7CloudAR34car_ServerWithClientDisConnectTypeO06servergH0yA2CmF",
+            "moduleName": "CloudAR",
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "clientDisConnect",
+            "printedName": "clientDisConnect",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CloudAR.car_ServerWithClientDisConnectType.Type) -> CloudAR.car_ServerWithClientDisConnectType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "car_ServerWithClientDisConnectType",
+                    "printedName": "CloudAR.car_ServerWithClientDisConnectType",
+                    "usr": "s:7CloudAR34car_ServerWithClientDisConnectTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CloudAR.car_ServerWithClientDisConnectType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "car_ServerWithClientDisConnectType",
+                        "printedName": "CloudAR.car_ServerWithClientDisConnectType",
+                        "usr": "s:7CloudAR34car_ServerWithClientDisConnectTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:7CloudAR34car_ServerWithClientDisConnectTypeO06clientgH0yA2CmF",
+            "mangledName": "$s7CloudAR34car_ServerWithClientDisConnectTypeO06clientgH0yA2CmF",
+            "moduleName": "CloudAR",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CloudAR.car_ServerWithClientDisConnectType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "car_ServerWithClientDisConnectType",
+                    "printedName": "CloudAR.car_ServerWithClientDisConnectType",
+                    "usr": "s:7CloudAR34car_ServerWithClientDisConnectTypeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt8",
+                "printedName": "Swift.UInt8",
+                "usr": "s:s5UInt8V"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:7CloudAR34car_ServerWithClientDisConnectTypeO8rawValueACSgs5UInt8V_tcfc",
+            "mangledName": "$s7CloudAR34car_ServerWithClientDisConnectTypeO8rawValueACSgs5UInt8V_tcfc",
+            "moduleName": "CloudAR",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt8",
+                "printedName": "Swift.UInt8",
+                "usr": "s:s5UInt8V"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7CloudAR34car_ServerWithClientDisConnectTypeO8rawValues5UInt8Vvp",
+            "mangledName": "$s7CloudAR34car_ServerWithClientDisConnectTypeO8rawValues5UInt8Vvp",
+            "moduleName": "CloudAR",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7CloudAR34car_ServerWithClientDisConnectTypeO8rawValues5UInt8Vvg",
+                "mangledName": "$s7CloudAR34car_ServerWithClientDisConnectTypeO8rawValues5UInt8Vvg",
+                "moduleName": "CloudAR",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:7CloudAR34car_ServerWithClientDisConnectTypeO",
+        "mangledName": "$s7CloudAR34car_ServerWithClientDisConnectTypeO",
+        "moduleName": "CloudAR",
+        "declAttributes": [
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "UInt8",
+        "isEnumExhaustive": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "car_CatchFrameInfo",
+        "printedName": "car_CatchFrameInfo",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "timestamp",
+            "printedName": "timestamp",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7CloudAR18car_CatchFrameInfoV9timestampSivp",
+            "mangledName": "$s7CloudAR18car_CatchFrameInfoV9timestampSivp",
+            "moduleName": "CloudAR",
+            "declAttributes": [
+              "HasStorage"
+            ],
+            "fixedbinaryorder": 0,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7CloudAR18car_CatchFrameInfoV9timestampSivg",
+                "mangledName": "$s7CloudAR18car_CatchFrameInfoV9timestampSivg",
+                "moduleName": "CloudAR",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7CloudAR18car_CatchFrameInfoV9timestampSivs",
+                "mangledName": "$s7CloudAR18car_CatchFrameInfoV9timestampSivs",
+                "moduleName": "CloudAR",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7CloudAR18car_CatchFrameInfoV9timestampSivM",
+                "mangledName": "$s7CloudAR18car_CatchFrameInfoV9timestampSivM",
+                "moduleName": "CloudAR",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "intervalOfTimeout",
+            "printedName": "intervalOfTimeout",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7CloudAR18car_CatchFrameInfoV17intervalOfTimeoutSivpZ",
+            "mangledName": "$s7CloudAR18car_CatchFrameInfoV17intervalOfTimeoutSivpZ",
+            "moduleName": "CloudAR",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7CloudAR18car_CatchFrameInfoV17intervalOfTimeoutSivgZ",
+                "mangledName": "$s7CloudAR18car_CatchFrameInfoV17intervalOfTimeoutSivgZ",
+                "moduleName": "CloudAR",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7CloudAR18car_CatchFrameInfoV17intervalOfTimeoutSivsZ",
+                "mangledName": "$s7CloudAR18car_CatchFrameInfoV17intervalOfTimeoutSivsZ",
+                "moduleName": "CloudAR",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7CloudAR18car_CatchFrameInfoV17intervalOfTimeoutSivMZ",
+                "mangledName": "$s7CloudAR18car_CatchFrameInfoV17intervalOfTimeoutSivMZ",
+                "moduleName": "CloudAR",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "car_CatchFrameInfo",
+                "printedName": "CloudAR.car_CatchFrameInfo",
+                "usr": "s:7CloudAR18car_CatchFrameInfoV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:7CloudAR18car_CatchFrameInfoVACycfc",
+            "mangledName": "$s7CloudAR18car_CatchFrameInfoVACycfc",
+            "moduleName": "CloudAR",
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "TimeoutJudgment",
+            "printedName": "TimeoutJudgment()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:7CloudAR18car_CatchFrameInfoV15TimeoutJudgmentSbyF",
+            "mangledName": "$s7CloudAR18car_CatchFrameInfoV15TimeoutJudgmentSbyF",
+            "moduleName": "CloudAR",
+            "declAttributes": [
+              "Mutating"
+            ],
+            "funcSelfKind": "Mutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:7CloudAR18car_CatchFrameInfoV",
+        "mangledName": "$s7CloudAR18car_CatchFrameInfoV",
+        "moduleName": "CloudAR",
+        "declAttributes": [
+          "RawDocComment"
+        ],
+        "conformances": [
           {
             "kind": "Conformance",
             "name": "Sendable",
@@ -22553,44 +23032,8 @@
           },
           {
             "kind": "Function",
-            "name": "notifyConnectQualityState",
-            "printedName": "notifyConnectQualityState(quality:reason:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "car_StreamQuality",
-                "printedName": "CloudAR.car_StreamQuality",
-                "usr": "s:7CloudAR17car_StreamQualityO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "car_StreamQualityReason",
-                "printedName": "CloudAR.car_StreamQualityReason",
-                "usr": "s:7CloudAR23car_StreamQualityReasonO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7CloudAR0A27XRClientStateUpdateProtocolP020notifyConnectQualityD07quality6reasonyAA010car_StreamI0O_AA0l1_mI6ReasonOtF",
-            "mangledName": "$s7CloudAR0A27XRClientStateUpdateProtocolP020notifyConnectQualityD07quality6reasonyAA010car_StreamI0O_AA0l1_mI6ReasonOtF",
-            "moduleName": "CloudAR",
-            "genericSig": "<τ_0_0 where τ_0_0 : CloudAR.CloudXRClientStateUpdateProtocol>",
-            "sugared_genericSig": "<Self where Self : CloudAR.CloudXRClientStateUpdateProtocol>",
-            "protocolReq": true,
-            "declAttributes": [
-              "RawDocComment"
-            ],
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "notifyConnectQualityState",
-            "printedName": "notifyConnectQualityState()",
+            "name": "notifyServerDisConnect",
+            "printedName": "notifyServerDisConnect()",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -22599,29 +23042,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:7CloudAR0A27XRClientStateUpdateProtocolP020notifyConnectQualityD0yyF",
-            "mangledName": "$s7CloudAR0A27XRClientStateUpdateProtocolP020notifyConnectQualityD0yyF",
-            "moduleName": "CloudAR",
-            "genericSig": "<τ_0_0 where τ_0_0 : CloudAR.CloudXRClientStateUpdateProtocol>",
-            "sugared_genericSig": "<Self where Self : CloudAR.CloudXRClientStateUpdateProtocol>",
-            "protocolReq": true,
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "notifyLatchFrameError",
-            "printedName": "notifyLatchFrameError()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:7CloudAR0A27XRClientStateUpdateProtocolP21notifyLatchFrameErroryyF",
-            "mangledName": "$s7CloudAR0A27XRClientStateUpdateProtocolP21notifyLatchFrameErroryyF",
+            "usr": "s:7CloudAR0A27XRClientStateUpdateProtocolP22notifyServerDisConnectyyF",
+            "mangledName": "$s7CloudAR0A27XRClientStateUpdateProtocolP22notifyServerDisConnectyyF",
             "moduleName": "CloudAR",
             "genericSig": "<τ_0_0 where τ_0_0 : CloudAR.CloudXRClientStateUpdateProtocol>",
             "sugared_genericSig": "<Self where Self : CloudAR.CloudXRClientStateUpdateProtocol>",
@@ -25241,14 +25663,21 @@
     {
       "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "BooleanLiteral",
-      "offset": 39165,
+      "offset": 6553,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 40525,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Module\/Screen\/ARModelController.swift",
       "kind": "BooleanLiteral",
-      "offset": 39935,
+      "offset": 41295,
       "length": 4,
       "value": "true"
     },
@@ -26025,37 +26454,9 @@
     {
       "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
       "kind": "IntegerLiteral",
-      "offset": 1941,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2023,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2075,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2166,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2263,
-      "length": 1,
-      "value": "4"
+      "offset": 2293,
+      "length": 10,
+      "value": "5"
     },
     {
       "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
@@ -26091,6 +26492,104 @@
       "offset": 2263,
       "length": 1,
       "value": "4"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2293,
+      "length": 10,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1941,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2023,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2075,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2166,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2263,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2293,
+      "length": 10,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2482,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2549,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2482,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2549,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2482,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2549,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/StreamConnectData.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2724,
+      "length": 2,
+      "value": "18"
     },
     {
       "filePath": "\/Users\/chaochao\/Documents\/ARSDK\/CloudAR\/CloudAR\/Main\/VJ\/Data\/URL.swift",

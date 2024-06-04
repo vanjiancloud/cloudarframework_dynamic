@@ -84,7 +84,7 @@ public struct car_LocatorCodeInfo {
   @_Concurrency.MainActor(unsafe) public func lightProperties()
   @_Concurrency.MainActor(unsafe) @objc public func session(_ session: ARKit.ARSession, didAdd anchors: [ARKit.ARAnchor])
   @_Concurrency.MainActor(unsafe) public func enterPosition(positionType: CloudAR.car_ARPositionType)
-  @_Concurrency.MainActor(unsafe) public func getConnectQuality() -> (Swift.Bool, CloudAR.car_StreamQuality?, CloudAR.car_StreamQualityReason?, Swift.Int)
+  @_Concurrency.MainActor(unsafe) public func getConnectQuality() -> (Swift.Bool, CloudAR.car_StreamQuality?, CloudAR.car_StreamQualityReason?)
   @_Concurrency.MainActor(unsafe) public func getCurrentARFrame() -> ARKit.ARFrame?
   @_Concurrency.MainActor(unsafe) public func reconnect() -> (Swift.Bool, Swift.String)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
@@ -191,9 +191,7 @@ public protocol CloudXRConnectProtocol {
 }
 public protocol CloudXRClientStateUpdateProtocol {
   func notifyClientStateUpdate(state: CloudAR.car_ClientState, reason: CloudAR.car_ClientStateReason)
-  func notifyConnectQualityState(quality: CloudAR.car_StreamQuality, reason: CloudAR.car_StreamQualityReason)
-  func notifyConnectQualityState()
-  func notifyLatchFrameError()
+  func notifyServerDisConnect()
 }
 public enum car_PositionActionType : Swift.UInt8 {
   case HiddenModel
