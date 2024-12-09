@@ -58,6 +58,7 @@ typedef enum NvstPortUsage_t
     NVST_PU_SIGNALING,
     NVST_PU_MIC,
     NVST_PU_SECURE_SIGNALING,
+    NVST_PU_BUNDLE,
     NVST_PU_COUNT,
 } NvstPortUsage;
 
@@ -71,13 +72,16 @@ typedef struct NvstPortInfo_t
 
 #define NVST_MAX_TURN_SERVER_SUPPORTED 4
 
+#define NVST_TURN_STUN_MAX_COUNT 3
+#define NVST_TURN_STUN_MAX_URL_LENGTH 128
+
 /// STUN/TURN server information.
 /// Check out this doc for more info: https://confluence.nvidia.com/pages/viewpage.action?pageId=622201137
 /// \todo add summary of confluence once everything is decided
 typedef struct NvstNatServer_t
 {
     /// STUN/TURN server uris.
-    const char** serverUris;
+    char serverUris[NVST_TURN_STUN_MAX_COUNT][NVST_TURN_STUN_MAX_URL_LENGTH];
     uint8_t serverCount;
     /// Username for TURN/STUN server.
     const char* username;
@@ -251,16 +255,24 @@ typedef enum NvstClientTranscodeModeFlags_t
     NVST_CTM_TYPE_IFRAME = 0x00000010,
     /// Specifies the frame was transcoded as a P-Frame
     NVST_CTM_TYPE_PFRAME = 0x00000020,
+    /// Specifies the start of client recording with transcode
+    NVST_CTM_RECORDING_START = 0x00000040,
+    /// Specifies the end of client recording with transcode
+    NVST_CTM_RECORDING_STOP = 0x00000080
 
     /// Reserved bits
-
-    ///8-MSB transcode metadata flags
-    /// Specifies the transcode format as H264
-    NVST_CTM_FORMAT_H264 = 0x20000000,
-    /// Specifies the transcode format as H265
-    NVST_CTM_FORMAT_H265 = 0x40000000,
-    /// Specifies the start of client recording with transcode
-    NVST_CTM_RECORDING_START = 0x80000000
 } NvstClientTranscodeModeFlags;
+
+/// Frame pacing modes.
+/// \ingroup Video
+typedef enum NvstFramePacingMode_t
+{
+    /// Do not pace frame rendering. Stream at steady FPS decided by QoS.
+    NVST_FRAME_PACING_MODE_NEVER = 0,
+    /// Pace frame rendering using Virtual VSync agorithm.
+    NVST_FRAME_PACING_MODE_VIRTUAL_VSYNC = 1,
+    /// Pace frame rendering using Reflex to match streaming FPS decided by QoS.
+    NVST_FRAME_PACING_MODE_REFLEX = 2,
+} NvstFramePacingMode;
 
 /// @}

@@ -1,4 +1,4 @@
-// Copyright NVIDIA Corporation 2020 - 2021
+// Copyright NVIDIA Corporation 2020 - 2023
 // TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
 // *AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
 // OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
@@ -68,15 +68,26 @@ extern "C"
         uint32_t sizeInBytes;
     } NvstAudioEvent;
 
-    /// A free form debug information to be stored on the server
-    /// \note Sending too many debug information can have impact on streaming performance
-    typedef struct NvstDebugInfo_t
+    /// A free form trace information to be stored on the server
+    /// \note Sending too much tracing information can have impact on streaming performance
+    typedef struct NvstTraceString_t
     {
         /// Stream to which this data is associated
         uint16_t streamIndex;
         /// Null terminated string
         char data[256];
-    } NvstDebugInfo;
+    } NvstTraceString;
+
+    /// Tracing information to be stored on the server as pairs - name and value
+    /// \note Sending too much tracing information can have impact on streaming performance
+    typedef struct NvstTraceStringPairUnique_t
+    {
+        /// Stream to which this data is associated
+        uint16_t streamIndex;
+        /// Null terminated string
+        char name[256];
+        char value[256];
+    } NvstTraceStringPairUnique;
 
     /// Update the state of a video decoder
     typedef struct NvstVideoDecoderStateInfo_t
@@ -111,6 +122,13 @@ extern "C"
         /// Flag to control perf indicator
         bool showPerfIndicator;
     } NvstShowPerfIndicatorInfo;
+
+    /// Structure to control perf indicator
+    typedef struct NvstShowStutterIndicatorInfo_t
+    {
+        /// Flag to control perf indicator
+        bool showStutterIndicator;
+    } NvstShowStutterIndicatorInfo;
 
     /// Set the DRC(Dynamic Resolution Change) and DFC(Dynamic Frequency Control) feature state dynamically
     typedef struct NvstDrcDfcState_t
@@ -147,8 +165,8 @@ extern "C"
         NVST_MESSAGE_MIMIC_REMOTE_CURSOR,
         /// Mouse settings
         NVST_MESSAGE_MOUSE_SETTINGS_DEPRECATED,
-        /// Debug info
-        NVST_MESSAGE_DEBUG_INFO,
+        /// Trace string
+        NVST_MESSAGE_TRACE_STRING,
         /// Show/hide on-screen perf indicator
         NVST_MESSAGE_SHOW_PERF_INDICATOR,
         /// Video decoder state
@@ -160,7 +178,11 @@ extern "C"
         /// Change the max bitrate dynamically
         NVST_MESSAGE_SET_MAX_BITRATE,
         /// Custom message from the client to the server
-        NVST_MESSAGE_CUSTOM_MESSAGE
+        NVST_MESSAGE_CUSTOM_MESSAGE,
+        /// Trace string as a unique pair, where the key is unique
+        NVST_MESSAGE_TRACE_STRING_PAIR_UNIQUE,
+        /// Show/hide on-screen stutter indicator
+        NVST_MESSAGE_SHOW_STUTTER_INDICATOR,
     } NvstMessageType;
 
     /// Structure used in nvstSendMessageToServer
@@ -186,12 +208,18 @@ extern "C"
             /// Stores mouse motion parameters
             /// (messageType = NVSTMESSAGE_MOUSE_SETTINGS)
             NvstMouseSettingsInfo mouseSettingsInfo;
-            /// Debug information related to a stream
-            /// (messageType = NVST_MESSAGE_DEBUG_INFO)
-            NvstDebugInfo debugInfo;
+            /// Trace information related to a stream
+            /// (messageType = NVST_MESSAGE_TRACE_STRING)
+            NvstTraceString traceString;
+            /// Trace information as a pair related to a stream
+            /// (messageType = NVST_MESSAGE_TRACE_STRING_PAIR_UNIQUE)
+            NvstTraceStringPairUnique traceStringPair;
             /// To control perf indicator
             /// (messageType = NVST_MESSAGE_SHOW_PERF_INDICATOR)
             NvstShowPerfIndicatorInfo showPerfIndicatorInfo;
+            /// To control stutter indicator
+            /// (messageType = NVST_MESSAGE_SHOW_STUTTER_INDICATOR)
+            NvstShowStutterIndicatorInfo showStutterIndicatorInfo;
             /// Video decoder state info
             /// (messageType = NVST_MESSAGE_VIDEO_DECODER_STATE)
             NvstVideoDecoderStateInfo vDecoderState;

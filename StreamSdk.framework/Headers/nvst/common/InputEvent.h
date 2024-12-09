@@ -1,4 +1,4 @@
-// Copyright NVIDIA Corporation 2017-2021
+// Copyright NVIDIA Corporation 2017-2022
 // TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
 // *AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
 // OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
@@ -65,6 +65,10 @@ extern "C"
         /// and the client wishes to use an absolute position for the mouse input.
         /// \note NVST_MF_VIRTUAL is only meaningful if NVST_MF_ABSCOORDS is set.
         NVST_MF_VIRTUAL = 0x1000,
+        /// The wheel values provided are sub-line resolution.
+        /// If specified, the wheel values must be sent such that 120 = one detent on a normal mouse.
+        /// A touchpad or free-scrolling mouse can use smaller values to indicate a smaller scroll distance.
+        NVST_MF_HIGH_RES_WHEEL = 0x2000,
     } NvstModifierFlags;
 
     /// \todo Rename this to something more general. I.e. 'NvstButtonState_t'
@@ -242,6 +246,11 @@ extern "C"
         NVST_GC_AXIS_RSTICK_Y = 19,
         NVST_GC_TRIGGER_LEFT = 20,
         NVST_GC_TRIGGER_RIGHT = 21,
+        NVST_GC_BTN_TOUCHPAD = 22,
+        NVST_GC_AXIS_TOUCHPAD1_X = 23,
+        NVST_GC_AXIS_TOUCHPAD1_Y = 24,
+        NVST_GC_AXIS_TOUCHPAD2_X = 25,
+        NVST_GC_AXIS_TOUCHPAD2_Y = 26,
         /// Reserved value for count of supported gamepad controls.
         NVST_GC_NUM_CONTROLS,
     } NvstGamepadControls;
@@ -279,10 +288,26 @@ extern "C"
         uint64_t captureTimestampUs;
     } NvstGamepadEvent;
 
-    /// Struct representing a gamepad state change event.
+    /// Struct representing a gamepad connectivity state change event.
     typedef struct NvstGamepadsChangedEvent_t
     {
         /// A bitmap of currently connected gamepads.
+        ///
+        /// The bitmap has space for up to 8 gamepads, however currently
+        /// only the first 4 gamepad slots are considered.
+        ///
+        /// The low 8 bits represent connection state of controllers at indices 0-7
+        /// The high 8 bits represent whether the connected controllers are Microsoft Xbox Controllers.
+        ///
+        /// Bit Layout:
+        /// 15  14  13  12  11  10  9   8   7   6   5   4   3   2   1   0
+        /// |--------- MS Bits ---------|   |------ Connected Bits -----|
+        ///
+        /// For example, if a single Xbox controller is connected, the bitmap should have value
+        /// 0b0000000100000001 = 0x0101
+        ///
+        /// If 4 Thunderstrike controllers are connected, the bitmap should have value
+        /// 0b0000000000001111 = 0x000F
         uint16_t bitmap;
     } NvstGamepadsChangedEvent;
 
@@ -436,6 +461,12 @@ extern "C"
         NVST_HC_SIZE
     } NvstHidControl;
 
+    typedef enum NvstHidChangeFlags_t
+    {
+        NVST_HCF_NONE = 0,
+        NVST_HCF_SUPPORTS_OUTPUT = 0x0001
+    } NvstHidChangeFlags;
+
     /// Struct representing a HID device state change event.
     typedef struct NvstHidChangeEvent_t
     {
@@ -443,6 +474,8 @@ extern "C"
         uint8_t id;
         /// Control operation to perform on the device.
         NvstHidControl control;
+        /// Flags
+        NvstHidChangeFlags flags;
     } NvstHidChangeEvent;
 
     /// Struct holding a unicode text string in utf-8 format.

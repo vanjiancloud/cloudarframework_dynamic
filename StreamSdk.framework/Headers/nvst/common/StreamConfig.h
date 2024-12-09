@@ -1,4 +1,4 @@
-// Copyright NVIDIA Corporation 2017-2021
+// Copyright NVIDIA Corporation 2017-2022
 // TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
 // *AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
 // OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
@@ -70,10 +70,12 @@ typedef struct NvstStreamingMode_t
     /// This is an estimate of the actual streaming fps and it is used for configuring the encoder
     /// so that it can maintain the desired bitrate.
     uint16_t actualStreamingFps;
-    /// This param represents the desired streaming fps and it is used to control capture thread timing.
-    /// Ideally, the first param (actual streaming fps) should closely match the second (target streaming fps),
-    /// but they may differ, e.g. if the game can't generate frames quickly enough.
-    uint16_t targetStreamingFps;
+
+    /// Sync captured FPS and streaming FPS.
+    /// When set to true, streaming FPS will sync to captured FPS which will avoid capturing and streaming
+    /// the duplicate (repeat) frames.
+    bool syncCapturedAndStreamingFps;
+
 } NvstStreamingMode;
 
 /// Defines status of a video frame after encoding.
@@ -107,8 +109,14 @@ typedef struct NvstQosStatus_t
     bool bCaptureFullScreen;
     /// SDK's recommended resolution/FPS for the application to render at.
     NvstStreamingMode recommendedMode;
+    /// This param represents the desired streaming FPS and it is used to control capture thread timing.
+    /// Ideally, actual streaming FPS should closely match target streaming FPS,
+    /// but they may differ, e.g. if the game can't generate frames quickly enough.
+    uint16_t targetStreamingFps;
     /// Reserved param
     void* reserved;
+    /// Size of reserved param
+    size_t reservedSize;
     /// Resolution pixel alignment recommendation, as configured by upper layers or client directly.
     uint8_t pixelAlignment;
     /// If pixel alignment takes place, round in favor of values close to this reference aspect ratio.
@@ -118,12 +126,14 @@ typedef struct NvstQosStatus_t
     uint32_t preferredWidth;
     /// Average round trip delay in ms
     uint32_t averageRtdMs;
-    /// Whether the frame provider should scale the frame for GRC.
-    /// If true, the app should provide a frame with a constant encode size and a data size set to
-    /// the recommended resolution
+    /// The encode resolution the frame provider should use for future frames. These are only non-zero if permitGrc
+    /// was set to true
+    /// If these values are non-zero, the app should provide a frame with the encode size set to these values and
+    /// a data size set to the recommended resolution. If zero, the app should provide frames as it would normally
     /// \todo For now, this is only useful for internal video streams. NvstGraphicsSurface needs to be extended
     /// to let apps pass in video frame encode size
-    bool bEnableGrc;
+    uint32_t encodeWidth;
+    uint32_t encodeHeight;
 
 } NvstQosStatus;
 
@@ -185,6 +195,9 @@ typedef struct NvstAudioStreamConfig_t
     bool opusMappingMode;
     /// Enable raw audio data dump (for debug purpose)
     bool pcmDumpEnabled;
+    /// Enable AAudio for low latency audio rendering
+    /// This flag applies only for android and audio streaming (not mic)
+    bool enableAAudio;
     /// Channel count to be used for streaming the audio output
     uint8_t channelCountSupported;
     /// Stream direction.
@@ -300,24 +313,6 @@ typedef enum NvstVideoContentType_t
     NVST_VC_END,
 } NvstVideoContentType;
 
-/// Streaming latency type.
-/// \ingroup Video
-typedef enum NvstStreamingType_t
-{
-    /// Streaming with default latency.
-    NVST_ST_DEFAULT = 0,
-    /// Streaming in Turbo mode.
-    ///
-    /// Turbo mode is a variable, high-framerate streaming mode, which currently operates at up to 120 FPS,
-    /// although higher framerates could be enabled in the future. The goal is latency reduction as compared
-    /// to traditional 60 FPS / 30 FPS streaming modes, even if video quality is slightly degraded.
-    /// Actual framerates can fall below 120 FPS if the game is running slowly, the client pipeline can’t process
-    /// the video stream quickly enough, or if video quality is too poor.
-    NVST_ST_TURBO_MODE = 1,
-    /// Not a valid streaming type - used only to count types.
-    NVST_ST_END,
-} NvstStreamingType;
-
 /// Frame pacing feedback modes.
 /// \ingroup Video
 typedef enum NvstFramePacingFeedbackMode_t
@@ -330,17 +325,30 @@ typedef enum NvstFramePacingFeedbackMode_t
     NVST_FRAME_PACING_FEEDBACK_PERFRAME = 2,
 } NvstFramePacingFeedbackMode;
 
+/// Multi stream bitrate control modes
+/// \ingroup Video
+typedef enum NvstMultiStreamBitrateControl_t
+{
+    /// Disable multi stream bitrate control.
+    NVST_MULTI_STREAM_BITRATE_DISABLED = 0,
+    /// Calculate minimum of all stream bitrates.
+    NVST_MULTI_STREAM_BITRATE_MINIMUM = 1,
+    /// Calculate average of all stream bitrates.
+    NVST_MULTI_STREAM_BITRATE_AVERAGE = 2,
+    /// Calculate weighted average of all stream bitrates.
+    NVST_MULTI_STREAM_BITRATE_WEIGHTED_AVERAGE = 3,
+} NvstMultiStreamBitrateControl;
+
+/// \def NVST_MAX_FORMAT_PREFERENCES
+/// Max codecs preferences to be provided by client to choose from.
+/// \ingroup Video
+#define NVST_MAX_FORMAT_PREFERENCES 3
+
 /// Defines reciever-specific configuration of the video stream.
 /// \todo Put in a more elaborate explanation what these fields are.
 /// \ingroup Video
 typedef struct NvstVideoReceiverStreamConfig_t
 {
-    /// YCbCr color space conversion mode for video encoding.
-    NvstCscMode cscMode;
-
-    /// Pick recommended streaming mode if true, use provided mode if false
-    bool autoMode;
-
     /// Maximum bitrate.
     /// \note If max bitrate set to 0, then SDK will calculate bitrate considering the resolution and fps.
     uint32_t maximumBitrateKbps;
@@ -351,22 +359,19 @@ typedef struct NvstVideoReceiverStreamConfig_t
     /// Enable video scaling.
     bool enableVideoScale;
 
-    /// Dynamic range mode.
-    NvstHdrMode dynamicRangeMode;
+    /// Multi stream bitrate control modes
+    NvstMultiStreamBitrateControl multiStreamBitRateMode;
 
-    /// Streaming latency type.
-    NvstStreamingType streamingType;
+    /// An array of video formats preferred for the streaming session.
+    /// Element 0 is given the highest preference.
+    /// If that is not supported by the server, element 1 is given the next preference and so on.
+    /// If none are supported, NVST_VF_H264 is assumed.
+    NvstVideoFormatPreference formatPreferences[NVST_MAX_FORMAT_PREFERENCES];
 
-    /// Format of the encoded video which should be produced by the server.
-    NvstVideoFormat format;
-
-    /// Maximum numer of reference frames.
-    /// Specify maximum number of reference frames decoder needs to maintain on client.
-    /// Clients can choose values from 1 to 16.
-    /// Standards specify the max at 16, hence server will cap the value even
-    /// if client passes any value greater than 16. If client set this value to 0,
-    /// it means maximum number of reference frames will be determined based on standard limits.
-    uint32_t maximumReferenceFrames;
+    /// Option for client to specify if it wants to use the default fallback to NVST_VF_H264 if
+    /// none of the client provided formatPreferences are supported by server.
+    /// If client choose to not use the default fallback, an appropriate error will be generated.
+    bool useDefaultFormatFallback;
 
     /// H.264 encoder deblocking filter mode.
     uint32_t videoEncoderDeblockingMode;
@@ -374,19 +379,24 @@ typedef struct NvstVideoReceiverStreamConfig_t
     /// No. of slices into which frames are divided.
     uint32_t videoEncoderSlicesPerFrame;
 
-    /// Video Decoder info.
-    NvstVideoDecoder videoDecoder;
-
     /// When to send this feedback: never, once per frame, or together with QoS stats.
+    /// FeedbackMode is deprecated. NVST_FRAME_PACING_FEEDBACK_INTERVAL is always used.
+    /// To control frame pacing use NvstFramePacingMode.
     NvstFramePacingFeedbackMode feedbackMode;
+
+    /// Agorithm to use to pace frame rendering and streaming.
+    NvstFramePacingMode framePacingMode;
 
     /// Whether frames are done as whole or as slices.
     uint8_t fullFrameAssembly;
 
-    /// Permit gradual resolution changes for this video stream
-    /// If true, and supported by the server, the SDK will change the resolution much more frequently than usual.
-    /// The resolution may even change multiple frames in a row.
-    bool permitGrc;
+    /// Custom configurable packet size for streaming session.
+    /// Supported range is 512-1408 bytes and should be multiple of 16.
+    /// If not multiple of 16, the value will be overridden to closest multiple of 16.
+    uint16_t customPacketSize;
+
+    /// If set then video traffic will be tagged with ECN-ECT tag.
+    bool enableL4S;
 
     /// Receive a H.264 decode unit to the decoder.
     ///

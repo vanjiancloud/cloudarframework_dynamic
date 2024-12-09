@@ -1,6 +1,0 @@
-framework module StreamSdk {
-  umbrella header "StreamSdk.h"
-
-  export *
-  module * { export * }
-}

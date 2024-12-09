@@ -1,4 +1,4 @@
-// Copyright NVIDIA Corporation 2020
+// Copyright NVIDIA Corporation 2020-2022
 // TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
 // *AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
 // OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
@@ -18,6 +18,7 @@
 #include "../client/ClientTypes.h"
 #include "../common/SharedTypes.h"
 #include "../common/Util.h"
+#include "../common/Result.h"
 
 #if defined(__cplusplus)
 extern "C"
@@ -87,6 +88,9 @@ extern "C"
 
         // Allow acks
         bool allowAcks;
+
+        // For internal use. Initialize with nullptr.
+        void* internalLegacyServer;
     } NvstSignalingServerConfig;
 
     /// Start websocket signaling server with given config to facilitate negotiation between peers.

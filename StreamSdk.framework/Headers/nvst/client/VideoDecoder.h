@@ -1,4 +1,4 @@
-// Copyright NVIDIA Corporation 2017 - 2020
+// Copyright NVIDIA Corporation 2017 - 2022
 // TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
 // *AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
 // OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
@@ -19,6 +19,7 @@
 #include <stdint.h>
 
 #include "../common/VideoDecodeUnit.h"
+#include "../common/VideoFormat.h"
 
 #if defined(__cplusplus)
 extern "C"
@@ -70,24 +71,12 @@ extern "C"
         /// \todo This is replicated information from the VDU struct.
         uint32_t slicesPerFrame;
 
-        /// Maximum number of reference frames.
-        /// Specify maximum number of reference frames decoder needs to maintain on client.
-        /// Clients can choose values from 1 to 16.
-        /// Standards specify the max at 16, hence server will cap the value even
-        /// if client passes any value greater than 16. If client set this value to 0,
-        /// it means maximum number of reference frames will be determined based on standard limits.
-        /// \warning The value will be deprecated in one of the coming releases.
-        /// \sa NvstVideoStreamConfig::maxNumReferenceFrames
-        uint32_t maxNumReferenceFrames;
+        /// Allow server sending intra refresh frames when required.
+        /// Allow intra refresh frame related features ony if decoder supports decoding intra refresh frames.
+        /// true - Allow server to send intra refresh frames when required
+        /// false - Do not allow server to send intra refresh frames in any case
+        bool allowIntraRefreshFrames;
     } NvstClientVideoQosSetting;
-
-    /// The type of the method used to deliver the H.264 bitstream to the decoder.
-    /// \param[in] userData The opaque pointer specified during initialization.
-    /// Provided by the client during the initialization of the NVSC API.
-    /// NVSC will then provide this value at all invocations of this callback.
-    /// \sa NvstVideoDecoder::userData
-    /// \param[in] vdu Struct representing a VU (a portion of the H.264 stream).
-    typedef void (*DECODE_VU_PROC)(void* userData, const NvstVideoDecodeUnit* vdu);
 
     /// Struct holding information about a H.264 decoder.
     /// \remarks
@@ -95,8 +84,8 @@ extern "C"
     /// must be specified during initialization of the stream client.
     typedef struct NvstVideoDecoder_t
     {
-        /// Opaque pointer associated with the decoder.
-        void* userData;
+        /// YCbCr color space conversion mode for video encoding.
+        NvstCscMode cscMode;
 
         /// Expected VU type.
         NvstVideoDecodeUnitType expectedVduType;
@@ -116,17 +105,40 @@ extern "C"
         uint32_t maxH264Level;
 
         /// Maximum Reference Frames handled by the decoder.
+        /// Specify maximum number of reference frames decoder needs to maintain on client.
+        /// Clients can choose values from 1 to 16.
+        /// Standards specify the max at 16, hence server will cap the value even
+        /// if client passes any value greater than 16. If client set this value to 0,
+        /// it means maximum number of reference frames will be determined based on standard limits.
         uint32_t maxNumReferenceFrames;
 
         /// Video QoS settings.
         NvstClientVideoQosSetting videoQosSetting;
 
-        /// Function to deliver a H.264 decode unit to the decoder.
-        /// \warning The callback will be deprecated in one of the coming releases.
-        /// \sa NvstVideoStreamConfig::onVideoReceived
-        DECODE_VU_PROC decodeVideoUnitProc;
+        /// Dynamic range mode.
+        NvstHdrMode dynamicRangeMode;
+
+        /// Permit gradual resolution changes for this video stream
+        /// If true, and supported by the server, the SDK will change the resolution much more frequently than usual.
+        /// The resolution may even change multiple frames in a row.
+        bool permitGrc;
 
     } NvstVideoDecoder;
+
+    /// Struct containing the video format preferences.
+    /// \remarks
+    /// A streaming client is expected to populate a format and the corresponding
+    /// video decoder settings. There can be multiple NvstVideoFormatPreferences
+    /// in which case SDK would query server capabilities to check which format is
+    /// supported and the corresponding videoDecoder settings are used.
+    typedef struct NvstVideoFormatPreference_t
+    {
+        /// Video codec format.
+        NvstVideoFormat format;
+
+        /// Video Decoder settings corresponding to the format.
+        NvstVideoDecoder videoDecoder;
+    } NvstVideoFormatPreference;
 
     /// @}
 

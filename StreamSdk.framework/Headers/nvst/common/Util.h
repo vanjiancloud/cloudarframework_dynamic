@@ -17,15 +17,15 @@
 
 /// Macro to generate export names automatically.
 #ifdef _WIN32
-#ifdef NVST_EXPORTS
-#define NVST_API __declspec(dllexport)
+    #ifdef NVST_EXPORTS
+        #define NVST_API __declspec(dllexport)
+    #else
+        #define NVST_API
+    #endif
 #else
-#define NVST_API
-#endif
-#else
-#if __GNUC__ >= 4
-#define NVST_API __attribute__((visibility("default")))
-#else
-#define NVST_API
-#endif
+    #if __GNUC__ >= 4
+        #define NVST_API __attribute__((visibility("default")))
+    #else
+        #define NVST_API
+    #endif
 #endif

@@ -31,7 +31,7 @@
 /// if windows define NVST_MAX_PATH_LENGTH MAX_PATH
 /// else define NVST_MAX_PATH_LENGTH 260 (or some other value)
 #ifndef MAX_PATH
-#define MAX_PATH 260
+    #define MAX_PATH 260
 #endif
 
 /*!

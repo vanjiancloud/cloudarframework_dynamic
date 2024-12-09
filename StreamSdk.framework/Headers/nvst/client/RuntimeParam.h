@@ -119,6 +119,14 @@ extern "C"
         bool hevcSupported;
     } NvstClientRuntimeHevcSupport;
 
+    /// These configuration we will access from AudioManager at Java Layer.
+    /// This will help to set audio buffer size in OpenSLESAudioSink.
+    typedef struct NvstClientAudioBufferConfig_t
+    {
+        uint32_t framesPerBuffer;
+        uint32_t sampleRate;
+    } NvstClientAudioBufferConfig;
+
     /// \todo Remove fixed value assignments as we won't send them over the network.
     /// Paramter type IDs
     typedef enum NvstClientRuntimeParamId_t
@@ -139,7 +147,10 @@ extern "C"
         /// Enable/disable speaker
         NVST_RUNTIME_PARAM_SPEAKER_ENABLE = 32,
         /// ADJB Configuration
-        NVST_RUNTIME_PARAM_ADJB_CONFIG = 33
+        NVST_RUNTIME_PARAM_ADJB_CONFIG = 33,
+        /// Set Audio frames per buffer and sample rate
+        /// Supported in Android only
+        NVST_RUNTIME_PARAM_AUDIO_BUFFER_CONFIG = 34
     } NvstClientRuntimeParamId;
 
     /// Struct storing runtime session parameters.
@@ -164,6 +175,8 @@ extern "C"
             /// Update the change in connection info
             NvstConnectionInfo connectionInfo;
             NvstClientDJBConfig djbConfig;
+            // Set device supported Audio Frames per Buffer and Sample rate
+            NvstClientAudioBufferConfig bufferConfig;
         };
     } NvstClientRuntimeParam;
 

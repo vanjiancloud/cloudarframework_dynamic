@@ -1,4 +1,4 @@
-// Copyright NVIDIA Corporation 2020-2021
+// Copyright NVIDIA Corporation 2020-2023
 // TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
 // *AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
 // OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
@@ -42,6 +42,8 @@ extern "C"
         NVST_CLIENT_DIAGNOSTIC_SERVER_NETWORK_CAPTURE = 6,
         /// Record server etl trace file.
         NVST_CLIENT_DIAGNOSTIC_SERVER_TRACE_CAPTURE = 7,
+        /// Settings for nvscClientConfig.txt
+        NVST_CLIENT_DIAGNOSTIC_CONFIG_FILE_SETTINGS = 8,
     } NvstClientDiagnosticParamId;
 
     /// Struct storing flag to control client side network capturing.
@@ -86,6 +88,14 @@ extern "C"
         uint16_t value;
     } NvstServerTraceCapture;
 
+    /// Settings nvscClientConfig.txt
+    typedef struct NvstConfigurationFileSettings_t
+    {
+        /// Enable or disable the reading of nvscClientConfig.txt.
+        /// \note Currently nvscClientConfig.txt is loaded by default, for backwards compatibility.
+        bool enabled;
+    } NvstConfigurationFileSettings;
+
     /// Struct storing diagnostic session parameters.
     typedef struct NvstClientDiagnosticParam_t
     {
@@ -110,6 +120,8 @@ extern "C"
             NvstServerNetworkCapture serverNetworkCapture;
             /// (param = NVST_CLIENT_DIAGNOSTIC_SERVER_TRACE_CAPTURE).
             NvstServerTraceCapture serverTraceCapture;
+            /// (param = NVST_CLIENT_DIAGNOSTIC_CONFIG_FILE_SETTINGS).
+            NvstConfigurationFileSettings configurationFileSettings;
         };
     } NvstClientDiagnosticParam;
 

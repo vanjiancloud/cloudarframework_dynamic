@@ -1,4 +1,4 @@
-// Copyright NVIDIA Corporation 2017 - 2022
+// Copyright NVIDIA Corporation 2017 - 2023
 // TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
 // *AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
 // OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
@@ -55,12 +55,12 @@ extern "C"
         NVST_FS_PRESENT_COMPLETED = 9,
         /// Confirmed that frame has been presented to the screen.
         NVST_FS_PRESENT_COMPLETED_CONFIRMED = 10,
-        /// Frame transcode has been completed.
-        NVST_FS_TRANSCODE_COMPLETED = 11,
-        /// Frame transcode has failed.
-        NVST_FS_TRANSCODE_FAILED = 12,
-        /// Frame transcode has been skipped.
-        NVST_FS_TRANSCODE_SKIPPED = 13,
+        /// Frame transcode pipeline states. /sa NvstClientTranscodeModeFlags
+        NVST_FS_TRANSCODE_PIPELINE = 11,
+        /// Frame was sampled for render (applicable for Android only)
+        NVST_FS_PRESENT_SAMPLED = 12,
+        /// Frame pre-decode(parsing) has completed
+        NVST_FS_PRE_DECODE_COMPLETED = 13
     } NvstVideoFrameState;
 
     /// Types of video frames.

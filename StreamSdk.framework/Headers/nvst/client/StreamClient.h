@@ -272,18 +272,6 @@ extern "C"
     /// Convenience typedef for library consumers.
     typedef NvstResult (*SEND_MESSAGE_TO_SERVER)(NvstClient client, NvstMessageForServer* message);
 
-    /// Send data to the server on signaling channel
-    ///
-    /// Applications can use this API to send a message to the server even while
-    /// the connection is in progress. This API is supposed to be called only after
-    /// receiving NVST_CE_SIGNALING_CHANNEL_READY event.
-    /// \param[in] client NvstClient obtained through nvstCreateClient().
-    /// \param[in] message Message to send to the server.
-    /// \retval NVST_R_INVALID_OBJECT if client is not a legitimate value;
-    /// \retval NVST_R_INVALID_ENUM for invalid enum type;
-    /// \retval NVST_R_SUCCESS otherwise.
-    NVST_API NvstResult nvstPushDataOnSignalingChannel(NvstClient client, const NvstMessage* message);
-
     /// Convenience typedef for library consumers.
     typedef NvstResult (*PUSH_DATA_ON_SIGNALING_CHANNEL)(NvstClient client, const NvstMessage* message);
 
