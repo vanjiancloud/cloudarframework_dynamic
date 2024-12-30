@@ -19,7 +19,6 @@
 #include "../common/Result.h"
 #include "../common/SharedTypes.h"
 #include "../common/VideoFormat.h"
-#include "../common/InputEvent.h"
 #include "NvstClientDJBConfig.h"
 
 #include <stdint.h>
@@ -232,8 +231,6 @@ typedef union NvstEventDataUnion_t
     NvstClientInterfaceChangeEvent interfaceChangeEvent;
     /// QoS requested change in the renderer's video dejitter buffer parameters.
     NvstClientDJBConfig djbConfig;
-    /// HID output report event sent from server to client
-    NvstHidReportEvent hidEvent;
 } NvstEventDataUnion;
 
 /// Enumeration of NVST client event types.
@@ -269,8 +266,6 @@ typedef enum NvstClientEventType_t
     NVST_CE_ADJB_CONFIG_CHANGE_EVENT = 19,
     /// This event indicates that the signaling channel is ready to accept messages
     NVST_CE_SIGNALING_CHANNEL_READY = 20,
-    /// HID output report event.
-    NVST_CE_HID_OUTPUT_EVENT = 21,
 } NvstClientEventType;
 
 /// Struct representing various NVST client events.

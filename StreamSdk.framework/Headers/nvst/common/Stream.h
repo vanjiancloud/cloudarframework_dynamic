@@ -84,6 +84,8 @@ extern "C"
         NVST_ED_STREAM_DISCONNECT_UNINTENTIONAL = 206,
         /// The game went into full-screen mode within specified time
         NVST_ED_FULL_SCREEN_DETECTION_SUCCESS = 207,
+        /// The game did not go into full-screen mode within specified time
+        NVST_ED_FULL_SCREEN_DETECTION_TIMEOUT = 208,
         /// The client sent a session pause request
         NVST_ED_CLIENT_REQUESTED_SESSION_PAUSE = 209,
         /// Session terminated as the user has been idle beyond a specified time
@@ -116,8 +118,6 @@ extern "C"
         NVST_ED_STREAM_PIPELINE_STOPPING = 224,
         /// Streaming pipeline is deinitializing (supported for video stream only)
         NVST_ED_STREAM_PIPELINE_DEINITIALIZING = 225,
-        /// Custom message channel is established
-        NVST_ED_CUSTOM_MESSAGE_CHANNEL_READY = 226,
     } NvstEventDetail;
 
     /// Data about a particular stream event.
@@ -270,6 +270,15 @@ extern "C"
         NvstStreamCallbacks* streamCallbacks,
         NvstStream* stream);
 
+    /// Convenience typedef for library consumers.
+    typedef NvstResult (*CREATESTREAM_PROC)(
+        const char* streamName,
+        const char* streamTitle,
+        const uint32_t numStreamConfigs,
+        NvstStreamConfig streamConfigs[],
+        NvstStreamCallbacks* streamCallbacks,
+        NvstStream* stream);
+
     /// Push data to the stream.
     ///
     /// This function is non-blocking.
@@ -320,6 +329,9 @@ extern "C"
     /// \ingroup nvstStreamAPI
     NVST_API NvstResult nvstDestroyStream(NvstStream stream);
 
+    /// Convenience typedef for library consumers.
+    typedef void (*DESTROYSTREAM_PROC)(NvstStream stream);
+
     /// Get default stream configuration.
     /// \param[in] mediaType stream media type.
     /// \param[in] streamDirection direction of stream.
@@ -329,6 +341,12 @@ extern "C"
     /// \retval NVST_R_SUCCESS otherwise.
     /// \ingroup nvstStreamAPI
     NVST_API NvstResult nvstGetDefaultStreamConfig(
+        NvstMediaType mediaType,
+        NvstStreamDirection streamDirection,
+        NvstStreamConfig* streamConfig);
+
+    /// Convenience typedef for library consumers.
+    typedef NvstResult (*GET_DEFAULT_STREAM_CONFIG_PROC)(
         NvstMediaType mediaType,
         NvstStreamDirection streamDirection,
         NvstStreamConfig* streamConfig);

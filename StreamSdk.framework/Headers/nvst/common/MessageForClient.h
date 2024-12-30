@@ -1,4 +1,4 @@
-// Copyright NVIDIA Corporation 2020-2022
+// Copyright NVIDIA Corporation 2020-2021
 // TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
 // *AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
 // OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
@@ -71,9 +71,6 @@ extern "C"
         uint16_t payloadSize;
         /// Payload bytes.
         const uint8_t* payload;
-        /// DPI scale this cursor was captured at, as a percentage.
-        /// \example scale = 100 means cursor was captured at 100% scaling
-        uint16_t scale;
         /// Data common to system and bitmap cursors.
         NvstCursorEventCommon common;
     } NvstBitmapCursorEvent;

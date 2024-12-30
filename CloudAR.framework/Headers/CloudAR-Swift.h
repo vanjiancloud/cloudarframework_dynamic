@@ -282,6 +282,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreFoundation;
 @import Foundation;
 @import MetalKit;
+@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -345,6 +346,21 @@ SWIFT_CLASS("_TtC7CloudAR24ARPositionViewController")
 - (void)captureOutput:(AVCaptureMetadataOutput * _Nonnull)output didOutputMetadataObjects:(NSArray<AVMetadataObject *> * _Nonnull)metadataObjects fromConnection:(AVCaptureConnection * _Nonnull)connection;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC7CloudAR15ScaleAdjustView")
+@interface ScaleAdjustView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)reset;
+@end
+
+
+SWIFT_CLASS("_TtC7CloudAR15car_cloudarInfo")
+@interface car_cloudarInfo : NSObject
++ (NSString * _Nonnull)arversion SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #endif

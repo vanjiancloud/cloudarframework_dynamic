@@ -1,4 +1,4 @@
-// Copyright NVIDIA Corporation 2017-2022
+// Copyright NVIDIA Corporation 2017-2021
 // TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
 // *AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
 // OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
@@ -28,10 +28,6 @@ extern "C"
     typedef enum NvstSurfaceFormat_t
     {
         /// Invalid surface format.
-        /// \note This format was previously used when streaming pre-encoded
-        ///   video. Using this format for pre-encoded video is deprecated and
-        ///   should be moved away from in favor of using codec-specific surface
-        ///   format types.
         NVST_SF_NONE = 0,
 
         /// 32bpp packed A8R8G8B8
@@ -48,7 +44,7 @@ extern "C"
         /// NV12: Y'CbCr "YUV" 4:2:0 planar with interleaved chroma.
         /// Both the luma and the interleaved chroma lines use the same pitch, which is obtained from the GPU.
         /// Width and height must be even on this format.
-        /// \warning Only supported with NVMEDIA, D3D9, and D3D11 SurfaceOrigins
+        /// \warning Only supported with NVMEDIA SurfaceOrigin
         NVST_SF_NV12 = 3,
 
         /// Y'CbCr "YUV" 4:4:4 planar
@@ -58,12 +54,12 @@ extern "C"
 
         /// 32bpp packed A2B10G10R10
         /// The pitch is obtained from the GPU on allocation and can later be obtained with pitch().
-        /// \warning Only supported with CUDA, D3D9, and D3D11 SurfaceOrigins
+        /// \warning Only supported with CUDA SurfaceOrigin
         NVST_SF_ABGR10 = 5,
 
         /// 32bpp packed B8G8R8A8
         /// The pitch is obtained from the GPU on allocation and can later be obtained with pitch().
-        /// \warning Only supported with CUDA and D3D11 SurfaceOrigins
+        /// \warning Only supported with CUDA SurfaceOrigin and DDA frame provider
         NVST_SF_BGRA = 6,
 
         /// 32bpp packed A8B8G8R8
@@ -72,17 +68,6 @@ extern "C"
 
         /// Encoded H.264
         NVST_SF_H264_VIDEO = 8,
-
-        /// Encoded HEVC
-        NVST_SF_HEVC_VIDEO = 9,
-
-        /// Encoded AV1
-        NVST_SF_AV1_VIDEO = 10,
-
-        /// P010: same as NV12, just using 10bit, where each value is stored in MSB of 16bit components, see
-        /// https://docs.microsoft.com/en-us/windows/win32/medfound/10-bit-and-16-bit-yuv-video-formats#420-formats
-        /// \warning Only supported with D3D9 SurfaceOrigin
-        NVST_SF_P010 = 11,
     } NvstSurfaceFormat;
 
     /// Colorspace of input surface
@@ -153,9 +138,6 @@ extern "C"
 
         /// H265/HEVC video format
         NVST_VF_H265 = 1,
-
-        /// AV1 video format
-        NVST_VF_AV1 = 2,
     } NvstVideoFormat;
 
     /// HDR modes

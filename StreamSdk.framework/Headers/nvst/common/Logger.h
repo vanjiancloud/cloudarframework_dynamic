@@ -1,15 +1,17 @@
-// SPDX-FileCopyrightText: Copyright (c) 2017-2022, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
-// SPDX-License-Identifier: LicenseRef-NvidiaProprietary
-//
-// NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
-// property and proprietary rights in and to this material, related
-// documentation and any modifications thereto. Any use, reproduction,
-// disclosure or distribution of this material and related documentation
-// without an express license agreement from NVIDIA CORPORATION or
-// its affiliates is strictly prohibited.
+// Copyright NVIDIA Corporation 2017-2021
+// TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
+// *AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
+// OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
+// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  IN NO EVENT SHALL
+// NVIDIA OR ITS SUPPLIERS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR
+// CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR
+// LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS
+// INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF OR
+// INABILITY TO USE THIS SOFTWARE, EVEN IF NVIDIA HAS BEEN ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGES.
 
 /// \file Logger.h
-/// NvstLogger interface.
+/// Interface to the logger.
 
 #pragma once
 
@@ -40,18 +42,17 @@ extern "C"
         NVST_LL_INFO = 2,
         /// Indication of unexpected behavior or undesirable results. No recovery is necessary or attempted.
         NVST_LL_WARNING = 3,
+        /// Issues which are fatal to particular operation/feature, but not to the whole session.
+        NVST_LL_ERROR = 4,
+        /// Any error forcing session/application to shutdown.
+        NVST_LL_CRITICAL = 5,
+        /// Just to use with the nvst{initialize,update}Logger() functions to set the log level to silence.
+        /// Not to use with nvstWriteLog.
+        NVST_LL_SILENCE = 6,
         /// Internal use only.  Log messages that are used in machine-parsing.  This log level will ONLY work with
         /// certain special strings defined in MachineParsedLogStrings.h.  This value cannot be selected by
         /// nvst{initialize,update}Logger().
-        /// Getting machine parsed string requires log level NVST_LL_WARNING or lower
-        NVST_LL_MACHINE_PARSED = 4,
-        /// Issues which are fatal to particular operation/feature, but not to the whole session.
-        NVST_LL_ERROR = 5,
-        /// Any error forcing session/application to shutdown.
-        NVST_LL_CRITICAL = 6,
-        /// Just to use with the nvst{initialize,update}Logger() functions to set the log level to silence.
-        /// Not to use with nvstWriteLog.
-        NVST_LL_SILENCE = 7,
+        NVST_LL_MACHINE_PARSED = 7,
     } NvstLogLevel;
 
     // Setting for enabling privacy.
@@ -65,14 +66,15 @@ extern "C"
 
 /// Default log levels for different build types.
 #ifdef DEBUG
-    #define NVST_LL_DEFAULT NVST_LL_DEBUG
+#define NVST_LL_DEFAULT NVST_LL_DEBUG
 #else
-    #define NVST_LL_DEFAULT NVST_LL_INFO
+#define NVST_LL_DEFAULT NVST_LL_INFO
 #endif
 
-    /// Logger output targets
-    /// Specifies where log messages will be written.  Any combination of targets may be used.
-    /// Bitfield layout - multiple outputs must be bitwise OR'ed
+    /// Logger output types (bitfield layout).
+    ///
+    /// Any number of outputs can be used in the same streaming session.
+    /// Multiple outputs must be bitwise OR'ed
     typedef enum NvstLogTarget_t
     {
         /// No logging.
@@ -87,27 +89,27 @@ extern "C"
         NVST_LT_CALLBACK = 0x8,
     } NvstLogTarget;
 
-    /// Log prefixes specify additional logging fields that are pre-pended to each log message.
-    /// Prefixes are in a bitfield format and must be bitwise OR'ed.  Use NVST_LP_ALL for all prefixes.
+    /// Logger output prefixes (bitfield layout)
+    /// Multiple outputs must be bitwise OR'ed, or NVST_LP_ALL for all prefixes
     typedef enum NvstLogPrefix_t
     {
-        /// No log prefixes.
+        /// No prefixes.
         NVST_LP_NONE = 0x0,
-        /// Add thread ID.  Denoted as {xxx}.
+        /// Add thread ID.
         NVST_LP_THREAD_ID = 0x1,
-        /// Add timestamp. GMT denoted as [xxx], local time denoted as =xxx=.
+        /// Add timestamp.
         NVST_LP_TIMESTAMP = 0x2,
-        /// Add counter value that increments from 0-9 with each log line.  Denoted as #x.
+        /// Add counter.
         NVST_LP_COUNTER = 0x4,
-        /// Add logging level.  One of D,I,W,M,E,C and denoted as (x).
+        /// Add logging level.
         NVST_LP_LEVEL = 0x8,
-        /// Add log tag. The name of the module that generated the log message.  Denoted as <xxx>.
+        /// Add log tag.
         NVST_LP_LOG_TAG = 0x10,
-        /// Add time since last log on the same thread, in milliseconds.  Denoted as *xxx*.
+        /// Add time since last log on the same thread, in milliseconds.
         NVST_LP_THREAD_DELTA = 0x20,
-        /// Add hash of log string.  Denoted as &xxx&.
+        /// Add unique identifier.
         NVST_LP_UNIQUE_ID = 0x40,
-        /// Add all logging prefixes.
+        /// Add all logging info.
         NVST_LP_ALL = ~0x0,
     } NvstLogPrefix;
 
@@ -122,7 +124,7 @@ extern "C"
     /// \ingroup NvstLogger
     /// Initialize the logger.
     /// \param[in] level The level of logging desired in this streaming session.
-    /// \param[in] targets Bitfield of log targets. \sa NvstLogTarget
+    /// \param[in] targets Log targets to log to. \sa NvstLogTarget
     /// \param[in] prefixes Log prefixes to use. \sa NvstLogPrefix
     /// \param[in] fileName Log file.
     /// Used only when logTargets includes NVST_LT_FILE flag.
@@ -167,7 +169,7 @@ extern "C"
     /// \param[in] level The level of logging for all logging targets, the default log level.
     /// \sa nvstUpdateLoggerLevel
     /// \sa nvstUpdateLoggerLevelPerTargetMask
-    /// \param[in] targets Bitfield of log targets. \sa NvstLogTarget
+    /// \param[in] targets Log targets to log to. \sa NvstLogTarget
     /// \param[in] prefixes Log prefixes to use. \sa NvstLogPrefix
     /// \param[in] fileName Log file.
     /// Used only when logTargets includes NVST_LT_FILE flag.
@@ -224,10 +226,6 @@ extern "C"
     NVST_API NvstResult nvstUpdateLoggerLevel(NvstLogLevel logLevel);
 
     /// \ingroup NvstLogger
-    /// Convenience typedef for library consumers.
-    typedef NvstResult (*UPDATE_LOGGER_LEVEL_PROC)(NvstLogLevel logLevel);
-
-    /// \ingroup NvstLogger
     /// Update log level for log targets specified in the given bitmask
     /// \param[in] logTargetMask Log targets to change log level for, after function call
     /// all targets in mask will have their levels changed to logLevel
@@ -238,13 +236,15 @@ extern "C"
     NVST_API NvstResult nvstUpdateLoggerLevelPerTargetMask(int32_t logTargetMask, NvstLogLevel logLevel);
 
     /// \ingroup NvstLogger
-    /// Update the logger's current privacy mode from this time onward.
-    /// \param[in] piiMode The new PII mode.
-    NVST_API void nvstUpdateLoggerPrivacyMode(NvstPiiMode piiMode);
+    /// Convenience typedef for library consumers.
+    typedef NvstResult (*UPDATE_LOGGER_LEVEL_PROC)(NvstLogLevel logLevel);
 
     /// \ingroup NvstLogger
-    /// Convenience typedef for library consumers.
-    typedef void (*UPDATE_LOGGER_PRIVACY_MODE)(NvstPiiMode piiMode);
+    /// Update the logger's current privacy mode.
+    /// \param[in] piiMode The PII logging mode of logging desired from this point onward.
+    /// \return
+    /// NVST_R_SUCCESS
+    NVST_API NvstResult nvstUpdateLoggerPrivacyMode(NvstPiiMode piiMode);
 
     /// \ingroup NvstLogger
     /// Get state of privacy logging field.
@@ -253,7 +253,7 @@ extern "C"
 
     /// \ingroup NvstLogger
     /// Convenience typedef for library consumers.
-    typedef NvstResult (*GET_LOGGER_PRIVACY_MODE)();
+    typedef NvstResult (*UPDATE_LOGGER_PRIVACY_MODE)(NvstPiiMode piiMode);
 
     /// \ingroup NvstLogger
     /// Update the logger's current prefixes.

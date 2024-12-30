@@ -12,17 +12,17 @@
 #pragma once
 
 #ifndef MAX_PATH
-    /// Maximum path length limitation
-    /// https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=cmd
-    #define MAX_PATH 260
+/// Maximum path length limitation
+/// https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=cmd
+#define MAX_PATH 260
 #endif
 /// Max length of the certificate path
 #define NVST_MAX_PEM_CERT_PATH 512
 #ifndef ICE_STRING_LENGTH
-    /// Maximum length of ICE username fragment and password SDP parameters
-    #define ICE_STRING_LENGTH 512
+/// Maximum length of ICE username fragment and password SDP parameters
+#define ICE_STRING_LENGTH 512
 #endif
 #ifndef DTLS_FINGERPRINT_LENGTH
-    /// Maximum length of DTLS fingerprint SDP parameters
-    #define DTLS_FINGERPRINT_LENGTH 512
+/// Maximum length of DTLS fingerprint SDP parameters
+#define DTLS_FINGERPRINT_LENGTH 512
 #endif

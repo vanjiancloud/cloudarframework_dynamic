@@ -75,8 +75,6 @@ extern "C"
         /// Video streaming latency score [0-100].
         /// Latency score is computed based on round trip delay.
         uint8_t latencyScore;
-        /// Estimated average game FPS.
-        double avgGameFps;
     } NvstClientVideoStats;
 
     /// Structure for retrieving audio stats.
@@ -101,8 +99,6 @@ extern "C"
         uint32_t frameDropThresholdUs;
         /// Approximate upper bound of frame arrival jitter in microseconds.
         uint32_t frameArrivalJitterBoundUs;
-        /// Max allowed number of queued frames.
-        uint32_t maxQueuedFrames;
     } NvstClientFramePacingStats;
 
     /// Structure consists of the stats which are meant to be retrieved from the StreamSDK.
@@ -132,9 +128,7 @@ extern "C"
         /// Wi-Fi stats.
         NVST_UPDATE_STATS_WIFI = 3,
         /// Extended stats.
-        NVST_UPDATE_STATS_EXTENDED = 4,
-        /// Client blob stats.
-        NVST_UPDATE_CLIENT_BLOB_CONTAINER = 5
+        NVST_UPDATE_STATS_EXTENDED = 4
     } NvstClientUpdateStatsId;
 
     /// Structure to update video frame stats.
@@ -216,18 +210,6 @@ extern "C"
         int16_t data[8];
     } NvstClientExtendedStats;
 
-    /// Structure to point to client blob data.
-    /// This data will be dumped into the ETL on server.
-    typedef struct NvstClientBlobContainer_t
-    {
-        /// Associated stream index.
-        uint16_t streamIndex;
-        /// Pointer points to the generic blob data.
-        void* data;
-        /// Length of the data pointer points to.
-        size_t size;
-    } NvstClientBlobContainer;
-
     /// Stats structure consists of the stats which are meant to be update into StreamSDK .
     typedef struct NvstClientUpdateStats_t
     {
@@ -242,8 +224,6 @@ extern "C"
             NvstClientWifiStats wifiStats;
             /// Extended stats (param = NVST_UPDATE_STATS_EXTENDED).
             NvstClientExtendedStats extendedStats;
-            /// Client Blob stats (param = NVST_UPDATE_CLIENT_BLOB_CONTAINER).
-            NvstClientBlobContainer clientBlobContainer;
         };
     } NvstClientUpdateStats;
 

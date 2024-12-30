@@ -97,10 +97,6 @@ extern "C"
         NEG_NVSC_CLIENT_AUDIO_UNINTENDED = 0x10,
         /// Intended client disconnection reasons.
         NEG_NVSC_CLIENT_INTENDED = 0x11,
-        /// Native RTC peer disconnect codes.
-        NEG_NATIVE_RTC_PEER_TRANSPORT_DISCONNECT = 0x12,
-        /// Native RTC network error codes.
-        NEG_NATIVE_RTC_NETWORK_ERROR = 0x13,
         /// Last NVSC error group.
         NEG_NVSC_LAST = 0x1F,
 
@@ -209,10 +205,7 @@ extern "C"
         /// A configuration value is invalid.
         NVST_R_INVALID_CONFIGURATION = 0x800B1003,
         // Initial connection creation failed for signaling
-        /// Creation of the WebSocket for signaling failed.
         NVST_R_ERROR_UNEXPECTED_DISCONNECTION_INITIAL = 0x800B1004,
-        /// Failed to create an object
-        NVST_R_CREATION_FAILED = 0x800B1005,
 
         // Server control failures.
         NVST_R_SERVER_CONTROL_FAILED = 0x800C0000,
@@ -234,13 +227,12 @@ extern "C"
         NVST_R_SERVER_CONTROL_RELAY_RI_FAILED = 0x800C0010,
         NVST_R_SERVER_CONTROL_PING_ACK_FAILED = 0x800C0011,
         NVST_R_SERVER_CONTROL_AUDIO_SURROUND_INFO_FAILED = 0x800C0012,
-        NVST_R_SERVER_CONTROL_STUN_FAILURE_DEPRECATED = 0x800C0013,
+        NVST_R_SERVER_CONTROL_STUN_FAILURE = 0x800C0013,
         NVST_R_SERVER_CONTROL_HOLE_PUNCH_FAILURE = 0x800C0014,
         NVST_R_SERVER_CONTROL_HAPTICS_STATE_CHANGE_FAILED = 0x800C0015,
         NVST_R_SERVER_CONTROL_MAX_BITRATE_CHANGE_FAILED = 0x800C0016,
         NVST_R_SERVER_CONTROL_DRC_STATE_CHANGE_FAILED = 0x800C0017,
         NVST_R_SERVER_CONTROL_DFC_STATE_CHANGE_FAILED = 0x800C0018,
-        NVST_R_SERVER_CONTROL_DATA_CHANNEL_CREATION_FAILURE = 0x800C0019,
 
         /// Passthrough group for SessionTerminationReason due to video, defined in ProtocolDefines.h.
         NVSTE_GROUP_SERVER_TERMINATED_VIDEO = 0x800E0000,
@@ -405,9 +397,6 @@ extern "C"
         // Remote input error codes.
         NVST_R_RI_PROTOCOL_UPDATE_FAILED = 0x800D0000,
         NVST_R_RI_FAILED_TO_CONNECT = 0x800D0001,
-
-        // NVSC VIDEO QOS
-        NVST_R_ERROR_BUFFER_FULL = 0x80060000,
 
         // ENET errors.
         NVST_R_ERROR_ENET_COULD_NOT_CREATE_HOST = 0x80070000,
@@ -931,8 +920,6 @@ extern "C"
         NVST_R_CONNERR_STUN_FAILED = 0x80020004,
         /// Validation of server certificate failed.
         NVST_R_CONNERR_CERT_VALIDATION_FAILED = 0x80020005,
-        /// Generaion of server certificate failed.
-        NVST_R_CONNERR_CERT_GENERATION_FAILED = 0x80020006,
 
         // Streamer server terminate reason codes.
         NVSTE_GROUP_SERVER_TERMINATED_INTENDED = 0x80030000,
@@ -1007,21 +994,7 @@ extern "C"
         /// Server was closed by nvstStopServer.
         NVST_DISCONN_SERVER_TERMINATED_CLOSED = 0x80030023,
         /// DTLS connection was gracefully closed.
-        NVST_DISCONN_SERVER_TERMINATED_DTLS_CLOSED_DEPRECATED = 0x80030024,
-        /// DTLS fingerprint mismatched.
-        NVST_DISCONN_SERVER_TERMINATED_DTLS_FINGERPRINT_MISMATCH_DEPRECATED = 0x80030025,
-        /// DTLS completed without an SRTP profile.
-        NVST_DISCONN_SERVER_TERMINATED_NO_SRTP_PROFILE_DEPRECATED = 0x80030026,
-        /// SRTP profile unsupported.
-        NVST_DISCONN_SERVER_TERMINATED_SRTP_PROFILE_UNSUPPORTED_DEPRECATED = 0x80030027,
-        /// Failure in SSL_export_keying_material.
-        NVST_DISCONN_SERVER_TERMINATED_SSL_KEYING_MATERIAL_EXPORT_FAILED_DEPRECATED = 0x80030028,
-        /// SRTP Setup failed.
-        NVST_DISCONN_SERVER_TERMINATED_SRTP_SETUP_FAILED_DEPRECATED = 0x80030029,
-        /// General failure in DTLS context initialization.
-        NVST_DISCONN_SERVER_TERMINATED_DTLS_CONTEXT_ERROR_DEPRECATED = 0x8003002A,
-        /// Peer did not send required DTLS certificate (or there was an error extracting it).
-        NVST_DISCONN_SERVER_TERMINATED_DTLS_NO_PEER_CERTIFICATE_DEPRECATED = 0x8003002B,
+        NVST_DISCONN_SERVER_TERMINATED_DTLS_CLOSED = 0x80030024,
 
         // Network error codes.
         NVSTE_GROUP_NETERR = 0x80040000,
@@ -1066,16 +1039,13 @@ extern "C"
         /// Unknown error coming from the server.
         NVST_NETERR_UNKNOWN_TRU_SERVER = 0x80040013,
         /// STUNing on video port failed.
-        NVST_NETERR_CLIENT_DISCONNECT_UNINTENDED_STUN_FAILED_DEPRECATED = 0x80040014,
+        NVST_NETERR_CLIENT_DISCONNECT_UNINTENDED_STUN_FAILED = 0x80040014,
         /// Sent Audio Buffer is NULL.
         NVST_NULL_AUDIO_BUFFER = 0x80040015,
         /// Invalid RTSP signaling port
         NVST_INVALID_RTSP_SIGNALING_PORT = 0x80040016,
         /// No packets on downstream channels (Audio, ENET, Video) prior to timeout.
         NVST_NETERR_CLIENT_DISCONNECT_UNINTENDED_DOWNSTREAM_BLACKOUT = 0x80040017,
-        /// No packets received on control channel by server app, but exist in underlying libraries.
-        /// They couldn't be dispatched to the app because not all sequence numbers are received etc.
-        NVST_NETERR_CLIENT_TIMED_OUT_PACKETS_IN_DISPATCH_QUEUE = 0x80040018,
 
         /// Intended Client Disconnection Reasons.
         NVST_DISCONN_CLIENT_INTENDED = 0x80110000,
@@ -1087,8 +1057,7 @@ extern "C"
         NVST_DISCONN_CLIENT_END_SESSION = 0x80110000,
         /// Client disconnected but keep the session alive.
         NVST_DISCONN_CLIENT_KEEP_SESSION_ALIVE = 0x80110001,
-        /// Client disconnected the websocket intentionally or because of some error to stop the session.
-        NVST_DISCONN_CLIENT_ON_SIGNALING = 0x80110002,
+
         /// For use with NvstCallbacks.onSignalingHeaders. Return one of the following NVST_SIGERR_* results to reject
         /// the signaling connection and provide more information to the client.
         //
@@ -1096,48 +1065,6 @@ extern "C"
         NVST_SIGERR_GENERIC = 0x80420000,
         /// Client did not provide the necessary header(s) for authentication.
         NVST_SIGERR_FORBIDDEN = 0x80420001,
-
-        /// Native RTC peer disconnect codes.
-        NVSTE_GROUP_NATIVE_RTC_PEER_TRANSPORT_DISCONNECT = 0x80120000,
-        /// DTLS connection was gracefully closed.
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_DTLS_CLOSED = 0x80120001,
-        /// DTLS fingerprint mismatched.
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_DTLS_FINGERPRINT_MISMATCH = 0x80120002,
-        /// DTLS completed without an SRTP profile.
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_NO_SRTP_PROFILE = 0x80120003,
-        /// SRTP profile unsupported.
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_SRTP_PROFILE_UNSUPPORTED = 0x80120004,
-        /// Failure in SSL_export_keying_material.
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_SSL_KEYING_MATERIAL_EXPORT_FAILED = 0x80120005,
-        /// SRTP Setup failed.
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_SRTP_SETUP_FAILED = 0x80120006,
-        /// failure in DTLS context initialization SSL_accept.
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_SSL_ACCEPT_ERROR = 0x80120007,
-        /// failure in DTLS context initialization SSL_CTX_use_certificate.
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_USE_CERTIFICATE_ERROR = 0x80120008,
-        /// failure in DTLS context initialization SSL_CTX_use_PrivateKey.
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_USE_PRIVATE_KEY_ERROR = 0x80120009,
-        /// failure in DTLS context initialization SSL_CTX_check_private_key.
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_CHECK_PRIVATE_KEY_ERROR = 0x8012000a,
-        /// failure in DTLS context initialization SSL_CTX_set_tlsext_use_srtp.
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_SSL_USE_SRTP_ERROR = 0x8012000b,
-        /// Peer did not send required DTLS certificate (or there was an error extracting it).
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_DTLS_NO_PEER_CERTIFICATE = 0x8012000c,
-        /// DTLS connection close alert received.
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_DTLS_ALERT = 0x8012000d,
-        /// Peer disconnected the websocket intentionally or because of some error to stop the session.
-        NVST_DISCONN_PEER_TRANSPORT_TERMINATED_ON_SIGNALING = 0x8012000e,
-        /// Dtls handshake timed out
-        NVST_DISCONN_PEER_TRANSPORT_TIMEOUT_ON_SIGNALING = 0x8012000f,
-
-        /// Native RTC network error codes.
-        NVSTE_GROUP_NATIVE_RTC_NETWORK_ERROR = 0x80130000,
-        /// Peer unintended termination.
-        NVST_NETERR_PEER_TRANSPORT_TERMINATED_UNINTENDED = 0x80130001,
-        /// Unknown network error.
-        NVST_NETERR_PEER_TRANSPORT_UNSPECIFIED = 0x80130002,
-        /// Lost network connectivity.
-        NVST_NETERR_PEER_TRANSPORT_TIMED_OUT = 0x80130003,
     } NvstResult;
 
     /// Alias the type while transitioning. \sa NvstResult.

@@ -1,4 +1,4 @@
-// Copyright NVIDIA Corporation 2019-2022
+// Copyright NVIDIA Corporation 2019-2021
 // TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
 // *AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
 // OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
@@ -13,48 +13,9 @@
 #pragma once
 
 #include "../common/Result.h"
-#include "../common/SharedTypes.h"
-#include "../common/Util.h"
 #include "../common/VideoFormat.h"
+#include "../common/Util.h"
 #include <stdint.h>
-
-/// Identifies the various capture strategies that may be selected.
-typedef enum NvstCaptureStrategy_t
-{
-    /// Capture strategy undefined (use server setting).
-    NVST_CS_UNDEFINED = 0,
-
-    /// Use NvFBC-based capture strategy.
-    NVST_CS_FBC = 1,
-
-    /// Use Desktop Duplication API-based capture strategy.
-    NVST_CS_DDA = 2,
-
-    /// Use Windows.Graphics.Capture-based capture strategy.
-    NVST_CS_WGC = 3,
-
-    /// Use CCX/encode-based capture strategy, a/sync depends on disableGrabWait, i.e. --disable-grab-wait arg
-    NVST_CS_CCX = 4,
-
-    /// Use CCX/yuv capture strategy.
-    NVST_CS_CCX_YUV = 5,
-
-    /// Use X11 based capture strategy.
-    NVST_CS_X11 = 6,
-
-    /// Use Android Container Capture based strategy.
-    NVST_CS_ACC = 7,
-
-    /// Use CCX/async encode capture strategy
-    NVST_CS_CCX_ENC_ASYNC = 8,
-
-    /// Use CCX/sync encode capture strategy, use video[0].enableNextCaptureMode != 0 for disableGrabWait
-    NVST_CS_CCX_ENC_SYNC = 9,
-
-    /// Used for range checks
-    NVST_CS_COUNT
-
-} NvstCaptureStrategy;
 
 /// \internal Video Frame input given by internal users.
 ///
@@ -106,9 +67,6 @@ typedef struct NvstInternalVideoSettings_t
     /// Client set dx9EnableNv12 flag
     bool dx9EnableNv12;
 
-    /// Client set dx9EnableHdr value
-    uint8_t dx9EnableHdr;
-
     /// Max fps expected by client
     uint32_t clientMaxFps;
 
@@ -124,20 +82,27 @@ typedef struct NvstInternalVideoSettings_t
     /// Timeout for FBC grab in ms for Turbo Mode Streaming
     uint8_t fbcDynamicFpsGrabTimeoutMs;
 
-    /// \todo
-    bool synchronousCcx;
-
-    /// Client requested video codec
-    NvstVideoFormat bitStreamFormat;
-
-    /// Client requested FramePacingMode
-    NvstFramePacingMode framePacingMode;
-
     /// Capture settings
     struct NvstCaptureSettings
     {
         /// Capture strategy.
-        NvstCaptureStrategy captureStrategy;
+        enum NvstCaptureStrategy
+        {
+            /// Capture strategy undefined (use server setting).
+            NVST_CS_UNDEFINED = 0,
+            /// Use NvFBC-based capture strategy.
+            NVST_CS_FBC = 1,
+            /// Use Desktop Duplication API-based capture strategy.
+            NVST_CS_DDA = 2,
+            /// Use Windows.Graphics.Capture-based capture strategy.
+            NVST_CS_WGC = 3,
+            /// Use CCX-based-encoded capture strategy.
+            NVST_CS_CCX = 4,
+            /// Use CCX-based-YUV capture strategy.
+            NVST_CS_CCX_YUV = 5,
+            /// Use X11 based capture strategy.
+            NVST_CS_X11 = 6,
+        } captureStrategy;
 
         /// Capture method.
         enum NvstCaptureMethod
@@ -175,7 +140,6 @@ typedef struct NvstInternalVideoSettings_t
         uint16_t sleepMethodAccuracyUs;
 
         /// Video frame provider wait method.
-        /// \note This structure MUST remain exactly matching that of NvstWaitMethod from NvscClientConfig_auto.h
         enum NvstWaitMethod
         {
             /// Wait method undefined (use server setting).
@@ -184,18 +148,12 @@ typedef struct NvstInternalVideoSettings_t
             NVST_WM_NO_WAIT = 1,
             /// Wait with timeout.
             NVST_WM_WAIT_WITH_TIMEOUT = 2,
-            /// Windows only: Wait for event w/ timeout, ignore cursor updates.
+            /// Wait for event w/ timeout, ignmore cursor updates.
             NVST_WM_WAIT_EVENT_NOCURSOR_WITH_TIMEOUT = 3,
-            /// Linux only: Only wait if there isn't a new frame.
-            NVST_WM_NO_WAIT_IF_FRAME_READY = 4,
-            /// Linux only: Don't wait.  Force frame refresh.
-            NVST_WM_NO_WAIT_FORCE_REFRESH = 5,
         } waitMethod;
 
         /// Video frame provider wait method timeout in milliseconds, if applicable.
         uint16_t waitMethodTimeoutMs;
-
-        bool enableLinuxDirectCapture;
     } captureSettings;
 } NvstInternalVideoSettings;
 
@@ -209,23 +167,10 @@ extern "C"
     /// \param[in] frameId FrameId to associate event and time to.
     /// \param[in] e2eEvent E2eEvent identifier. \sa StatsReporting.h
     /// \param[in] timeMs Timestamp to report for the event. If 0, current time is reported.
-    /// \param[in] enableGPUMark write event to GPUView as well if true.
     /// \endinternal
     /// \warning Only to be used by internal users.
-    NVST_API NvstResult nvstInternalSubmitE2eStats(
-        uint32_t streamIndex,
-        uint32_t frameId,
-        uint32_t e2eEvent,
-        double timeMs,
-        bool enableGPUMark);
-
-    /// \internal Submit server stats to Stream SDK for ETL reporting. This function should be called as close to the event as possible. Because it uses current time as timestamp for the event
-    ///
-    /// \param[in] frameId FrameId to associate event and time to.
-    /// \param[in] e2eEvent E2eEvent identifier. \sa StatsReporting.h
-    /// \endinternal
-    /// \warning Only to be used by internal users.
-    NVST_API NvstResult nvstInternalSubmitGpuStats(uint32_t frameId, uint32_t e2eEvent);
+    NVST_API NvstResult
+        nvstInternalSubmitE2eStats(uint32_t streamIndex, uint32_t frameId, uint32_t e2eEvent, double timeMs);
 
 #if defined(__cplusplus)
 }
