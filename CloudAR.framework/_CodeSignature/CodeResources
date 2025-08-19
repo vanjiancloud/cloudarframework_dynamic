@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/CloudAR.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		Mj+E/oBw8wY6Kl9+5Ha20k8qr28=
+		Hw1n+Ztgi3mCFbRdZpyXSbFoaZE=
 		</data>
 		<key>Modules/CloudAR.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		loKwFblSItCTdX7m1wEYvHwBSs4=
+		vXJJ8fIFYJd76MN4Kl+1+tXUJc8=
 		</data>
 		<key>Modules/CloudAR.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/CloudAR.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		7IBf9GhKRpx2NkJimj7pQwNUg+8=
+		Z+rqlrAsC87gEcTPkB7VFQlb4wA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -147,14 +147,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UOa8dP9k3NOzOU67O6IpfQ/MRKUONAezwbeeup7dql0=
+			81XxL1PpupuDUTToNXUeTM9qPGjz4vZ01zhlBvpTa+U=
 			</data>
 		</dict>
 		<key>Modules/CloudAR.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			K5P2LpqxNhGMtHI0allQ8oDCzMvI6+BHMIq8wnxcne4=
+			HFZaCXnVs34AtiPB/8NxPVHG3niAIaAgS4bc6H+9vjc=
 			</data>
 		</dict>
 		<key>Modules/CloudAR.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -182,7 +182,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gC8ERtKVdYN4gt1bitHw3XTm0hgCw2Xrn2gl9xBFNO0=
+			FqtX2zjgd1B65TDShwe+Ii3fabmC4kNr9i3TEb+y1d0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
